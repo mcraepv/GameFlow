@@ -1,0 +1,30 @@
+{
+  "name": "gameflowapi",
+  "version": "1.0.0",
+  "description": "GameFlow solves the choice paralysis problem many gamers encounter when trying to decide what to play next. Users can simply log into their Steam accounts and take a short quiz, and GameFlow gives them a suggestion and saves their results. Users can also look through past quiz results.",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.10.2",
+    "passport": "^0.4.1",
+    "passport-steam": "^1.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcraepv/GameFlowAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcraepv/GameFlowAPI/issues"
+  },
+  "homepage": "https://github.com/mcraepv/GameFlowAPI#readme"
+}
