@@ -1,22 +1,23 @@
 const db = require('../models');
 
 module.exports = {
-  findBySteamID: async (req, res) => {
+  findBySteamID: async (id) => {
     try {
       const user = await db.User.findOne({
-        steamID: req.params.id,
+        steamID: id,
       }).populate('quizzes');
-      res.json(user);
+      return user;
     } catch (err) {
-      res.status(422).json(err);
+      console.log(err);
     }
   },
-  create: async (req, res) => {
+  create: async (id) => {
     try {
-      const newUser = await db.User.create(req.body);
-      res.json(newUser);
+      // console.log(gameIDs);
+      // const newUser = await db.User.create(req.body);
+      // res.json(newUser);
     } catch (err) {
-      res.status(422).json(err);
+      console.log(err);
     }
   },
   update: async (req, res) => {
@@ -27,7 +28,7 @@ module.exports = {
       );
       res.json(user);
     } catch (err) {
-      res.status(422).json(err);
+      console.log(err);
     }
   },
   remove: async (req, res) => {
@@ -38,7 +39,7 @@ module.exports = {
       user.remove();
       res.json(user);
     } catch (err) {
-      res.status(422).json(err);
+      console.log(err);
     }
   },
 };
