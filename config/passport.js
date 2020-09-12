@@ -1,5 +1,6 @@
 const SteamStrategy = require('passport-steam').Strategy;
 const API = require('../utils/API');
+const usersController = require('../controllers/usersController');
 
 const db = require('../models');
 module.exports = (passport) => {
@@ -11,9 +12,8 @@ module.exports = (passport) => {
         apiKey: 'C4559EEF7DAF679ED65CF8FB368F5868',
       },
       async function (identifier, profile, done) {
-        //need better login handling (if user exists already, etc. do in controller file)
         const games = await API.getOwnedGames(profile.id);
-        console.log(games);
+        usersController.create(profile.id, games);
       }
     )
   );

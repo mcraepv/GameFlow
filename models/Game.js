@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const GameSchema = new Schema({
-  name: {
+  title: {
     type: String,
     unique: true,
     required: true,
   },
-  genres: { type: [String], required: true },
+  genres: [String],
   rating: Number,
   appID: { type: Number, required: true },
 });
