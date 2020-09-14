@@ -12,8 +12,8 @@ module.exports = (passport) => {
         apiKey: 'C4559EEF7DAF679ED65CF8FB368F5868',
       },
       async function (identifier, profile, done) {
-        const games = await API.getOwnedGames(profile.id);
-        usersController.create(profile.id, games);
+        const userGames = await usersController.create(profile.id);
+        console.log(userGames);
       }
     )
   );
