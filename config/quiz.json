@@ -1,0 +1,30 @@
+{
+  "topLevels": "testesttestetstestest",
+  "genreQ": {
+    "question": "What sounds most appealing?",
+    "rpgs": {
+      "option": "Battling through a distant land and upgrading a character",
+      "drillDowns": {
+        "question": "what sounds most appealing?",
+        "cRPGS": {
+          "option": "XXXXXXX",
+          "key": "cRPG"
+        },
+        "aRPGS": {
+          "opt": "",
+          "key": ""
+        },
+        "jRPGS": {
+          "opt": "",
+          "key": ""
+        },
+        "all": {
+          "opt": "they all sound fun!",
+          "key": "role playing game"
+        }
+      }
+    },
+    "strat": {},
+    "shooter": {}
+  }
+}

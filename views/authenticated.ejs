@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Authenticated Successfully</title>
+  </head>
+
+  <body>
+    Successfully Authenticated.
+
+    <script>
+      window.opener.postMessage(
+        {
+          games: `<%-JSON.stringify(games)%>`,
+          ok: true,
+        },
+        '<%= clientUrl %>'
+      );
+
+      window.close();
+    </script>
+  </body>
+</html>

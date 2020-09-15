@@ -1,9 +1,15 @@
 const SteamStrategy = require('passport-steam').Strategy;
-const API = require('../utils/API');
 const usersController = require('../controllers/usersController');
 
-const db = require('../models');
 module.exports = (passport) => {
+  passport.serializeUser(function (userGames, done) {
+    done(null, userGames);
+  });
+
+  passport.deserializeUser(function (obj, done) {
+    done(null, obj);
+  });
+
   passport.use(
     new SteamStrategy(
       {
@@ -13,7 +19,7 @@ module.exports = (passport) => {
       },
       async function (identifier, profile, done) {
         const userGames = await usersController.create(profile.id);
-        console.log(userGames);
+        done(null, userGames);
       }
     )
   );
