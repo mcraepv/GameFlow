@@ -1,7 +1,7 @@
 {
   "topLevels": "testesttestetstestest",
   "genreQ": {
-    "question": "What sounds most appealing?",
+    "question": "Pick as many as sound appealing",
     "rpgs": {
       "option": "Battling through a distant land and upgrading a character",
       "drillDowns": {
@@ -12,19 +12,29 @@
         },
         "aRPGS": {
           "opt": "",
-          "key": ""
+          "key": "crpg"
         },
         "jRPGS": {
           "opt": "",
-          "key": ""
+          "key": "jrpg"
         },
         "all": {
           "opt": "they all sound fun!",
-          "key": "role playing game"
+          "key": "rpg"
         }
       }
     },
-    "strat": {},
-    "shooter": {}
+    "strat": {
+      "option": "Controlling an army or leading a nation",
+      "drillDowns": {
+        "question": "What appealing",
+        "4X": ""
+      }
+    },
+    "shooter": {},
+    "racing": {},
+    "simulation": {},
+    "platforming": {},
+    "puzzle": {}
   }
 }
