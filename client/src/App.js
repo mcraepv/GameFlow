@@ -16,6 +16,7 @@ const theme = {
       card: '#3C4042',
       primary: '#0e0f10',
       lightGray: '#A0A4A9',
+      focus: '#FFB2FF',
     },
     font: {
       family: 'Ubuntu',
@@ -76,9 +77,8 @@ function App() {
         <MyCard />
       </Box> */}
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" render={() => <Landing login={login} />} />
         </Switch>
-        <button onClick={login}>Login</button>
       </Grommet>
     </Router>
   );
