@@ -1,11 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './utils/API';
 import { Grommet, Button, Heading, Box } from 'grommet';
 import { Notification } from 'grommet-icons';
 import AppBar from './components/AppBar';
 import MyCard from './components/MyCard';
 import Landing from './pages/Landing';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  Redirect,
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom';
+import GamesContext from './utils/GamesContext';
+import Quiz from './pages/Quiz';
 
 const theme = {
   global: {
@@ -27,6 +34,10 @@ const theme = {
 };
 
 function App() {
+  const [gamesState, setGamesState] = useState({
+    games: [],
+  });
+
   useEffect(() => {
     window.addEventListener('message', (event) => {
       if (event.origin !== process.env.REACT_APP_API_URL) {
@@ -36,6 +47,9 @@ function App() {
       const { games, ok } = event.data;
       if (ok) {
         console.log(JSON.parse(games));
+        setGamesState({
+          games: JSON.parse(games),
+        });
       }
     });
   });
@@ -47,11 +61,6 @@ function App() {
     );
     if (window.focus) popupWindow.focus();
   };
-
-  // const cardProps = {
-  //   imgAlt: 'Hello',
-  //   imgLink: 'world',
-  // };
 
   return (
     <Router>
@@ -65,20 +74,18 @@ function App() {
             onClick={() => {}}
           />
         </AppBar>
-        {/* <Box
-        flex
-        align="center"
-        direction="row"
-        justify="center"
-        background="background"
-      >
-        <MyCard />
-        <MyCard />
-        <MyCard />
-      </Box> */}
-        <Switch>
-          <Route exact path="/" render={() => <Landing login={login} />} />
-        </Switch>
+        <GamesContext.Provider value={gamesState}>
+          <Switch>
+            <Route exact path="/">
+              {gamesState.games.length ? (
+                <Redirect to="/quiz" />
+              ) : (
+                <Landing login={login} />
+              )}
+            </Route>
+            <Route exact path="/quiz" component={Quiz} />
+          </Switch>
+        </GamesContext.Provider>
       </Grommet>
     </Router>
   );
@@ -94,3 +101,17 @@ export default App;
 // #606368 - light gray - drop shadow
 //#3C4042 - dark gray
 //#A0A4A9 - off white - text
+
+{
+  /*<Box
+  flex
+  align="center"
+  direction="row"
+  justify="center"
+  background="background"
+  >
+  <MyCard />
+  <MyCard />
+  <MyCard />
+</Box>  */
+}
