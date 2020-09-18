@@ -1,40 +1,118 @@
 {
   "topLevels": "testesttestetstestest",
   "genreQ": {
-    "question": "Pick as many as sound appealing",
-    "rpgs": {
-      "option": "Battling through a distant land and upgrading a character",
+    "question": "Let's start with broad strokes. Pick The scenario that sounds most fun to you.",
+    "rpg": {
+      "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default option, then getting to the attributes screen and rolling the same glass cannon build you always do.",
+      "key": "rpg",
       "drillDowns": {
-        "question": "what sounds most appealing?",
-        "cRPGS": {
-          "option": "XXXXXXX",
-          "key": "cRPG"
-        },
-        "aRPGS": {
-          "opt": "",
+        "question": "So you like role playing, eh? Well, what type of role playing sounds best to you?",
+        "tacticalRPG": {
+          "option": "I like overlooking a battlefield and controlling a squad of hitters, each doing what they do best. What they do best is dictated by me, of course.",
           "key": "crpg"
         },
+        "actionRPG": {
+          "option": "I like to click, and loot. Click to attack, click to loot. Maybe press an ability button here or there, but you get the idea.",
+          "key": "action rpg"
+        },
         "jRPGS": {
-          "opt": "",
+          "option": "I like anime, but in video games.",
           "key": "jrpg"
         },
-        "all": {
-          "opt": "they all sound fun!",
-          "key": "rpg"
+        "roguelikes": {
+          "option": "I like to die. A lot. I like getting super attached to a character, only to watch them die. Over and over again.",
+          "key": "roguelike"
+        },
+        "openworldRPG": {
+          "option": "I like setting out from the starting area, exploring an endless landscape and living my life how I want t- Wait, you're telling me I'm the chosen one? Me, out of all these NPCs out here?",
+          "key": "open world"
         }
+      },
+      "strategy": {
+        "option": "Leading a squad, army or nation to victory over its enemies while ignoring the problematic nature of waging large scale wars for fun.",
+        "key": "strategy",
+        "drillDowns": {
+          "question": "More of the tactical type, huh? Well, what kind of tactics do you prefer?",
+          "4X": {
+            "option": "I like to eXplore a map, eXpand to dominate that map, eXploit the resources available and eXterminate everything that isn't me.",
+            "key": "4x"
+          },
+          "moba": {
+            "option": "Ok. So there's three lanes, and everyone controls what's called a 'champion', or 'legend'...",
+            "key": "moba"
+          },
+          "rts": {
+            "option": "No turns for me. I like facing off against an opponent, each of us controlling huge armies concurrently. Whoever kills the other's base first, wins. gg no re scrub",
+            "key": "rts"
+          },
+          "tactical": {
+            "option": "I like to plan out squad movements methodically, only to reload an autosave from 30 minutes ago because my best unit just got FREAKING HEADSHOT FROM ACROSS THE MAP",
+            "key": "tactical"
+          },
+          "grandStrategy": {
+            "option": "I like pretending I'm the ruler of an entire nation, waging a war for dominance, survival...and sweet, sweet border expansion.",
+            "key": "grand strategy"
+          }
+        }
+      },
+      "action": {
+        "option": "Using perfect movement, precise timing and unmatched accuracy to dominate a game.",
+        "key": "strategy",
+        "drillDowns": {
+          "question": "An action junkie, are you? Alright, what kind of action do you prefer?",
+          "platformer": {
+            "option": "I like falling into a bottomless pit right before the end of the level, then missing the first jump six times in a row.",
+            "key": "platformer"
+          },
+          "shooter": {
+            "option": "I like battling through wave after wave of deadly enemies, chugging Energy Drink TM and clicking heads until everything around me lies dead or dying.",
+            "key": "shooter"
+          },
+          "fighting": {
+            "option": "Hitting combos is my thing. Doesn't matter if its 2D or 3D. My favorite thing to do is learn complex button combinations to perform five second attack animations.",
+            "key": "fighting"
+          },
+          "battleRoyale": {
+            "option": "I wanna be the last person standing in the middle of a deadly circle. No, my escape from that circle isn't explained. Stop asking so many questions.",
+            "key": "battle royale"
+          },
+          "survival": {
+            "option": "I want to explore and find resources so I can keep filling constantly depleting bars. If I run out of food, I die. No water? Dead. Too tired, too bad. Deceased.",
+            "key": "survival"
+          }
+        }
+      },
+      "simulation": {
+        "option": "Meticulously planning every aspect of your world like an all-powerful deity with severe control issues, until it runs exactly how you want it.",
+        "key": "simulation",
+        "drillDowns": {
+          "question": "Hmmm, you like simulators, do you? Which simulation appeals most to you?",
+          "sports": {
+            "option": "I like playing sports, but on a screen in my house. Instead of outside, with real people.",
+            "key": "sports"
+          },
+          "management": {
+            "option": "I like managing large scale projects, but I didn't go to school to be a city manager so I just play video games instead.",
+            "key": "management"
+          },
+          "racing": {
+            "option": "I like going the distance. Going for speed. She's all alone (all alone) in her time of need. (I like racing games)",
+            "key": "racing"
+          },
+          "flight": {
+            "option": "I wanna fly planes and spaceships. That's it. No special requirements. Just give me a plane or a spaceship, and I'll fly that thing for hours.",
+            "key": "flight"
+          },
+          "lifeSim": {
+            "option": "I want to live another life. Take video games to their furthest extent, and they're just simulations of the real world. I have no way of knowing whether my in-game character is self-aware. And they'd have no way of knowing that I exist. What if we're the sims? Who's playing our game?",
+            "key": "life sim"
+          }
+        }
+      },
+      "adventure": {
+        "option": "Getting the rush of discovery from exploring a new area that you had to look at the wiki to figure out how to get to.",
+        "key": "adventure"
       }
-    },
-    "strat": {
-      "option": "Controlling an army or leading a nation",
-      "drillDowns": {
-        "question": "What appealing",
-        "4X": ""
-      }
-    },
-    "shooter": {},
-    "racing": {},
-    "simulation": {},
-    "platforming": {},
-    "puzzle": {}
+    }
   }
 }
