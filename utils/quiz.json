@@ -1,117 +1,166 @@
 {
-  "topLevels": "testesttestetstestest",
   "genreQ": {
     "question": "Let's start with broad strokes. Pick The scenario that sounds most fun to you.",
-    "rpg": {
-      "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default option, then getting to the attributes screen and rolling the same glass cannon build you always do.",
-      "key": "rpg",
-      "drillDowns": {
-        "question": "So you like role playing, eh? Well, what type of role playing sounds best to you?",
-        "tacticalRPG": {
-          "option": "I like overlooking a battlefield and controlling a squad of hitters, each doing what they do best. What they do best is dictated by me, of course.",
-          "key": "crpg"
-        },
-        "actionRPG": {
-          "option": "I like to click, and loot. Click to attack, click to loot. Maybe press an ability button here or there, but you get the idea.",
-          "key": "action rpg"
-        },
-        "jRPGS": {
-          "option": "I like anime, but in video games.",
-          "key": "jrpg"
-        },
-        "roguelikes": {
-          "option": "I like to die. A lot. I like getting super attached to a character, only to watch them die. Over and over again.",
-          "key": "roguelike"
-        },
-        "openworldRPG": {
-          "option": "I like setting out from the starting area, exploring an endless landscape and living my life how I want t- Wait, you're telling me I'm the chosen one? Me, out of all these NPCs out here?",
-          "key": "open world"
+    "options": {
+      "rpg": {
+        "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default option, then rolling the same glass cannon you always do.",
+        "image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+        "key": "rpg",
+        "drillDowns": {
+          "question": "So you like role playing, eh? Well, what type of role playing sounds best to you?",
+          "options": {
+            "tacticalRPG": {
+              "option": "I like overlooking a battlefield and controlling a squad of hitters, each doing what they do best. What they do best is dictated by me, of course.",
+              "image": "https://media.rawg.io/media/games/530/53081dbd5003f990fa5312404ac3d71a.jpg",
+              "key": "crpg"
+            },
+            "actionRPG": {
+              "option": "I like to click, and loot. Click to attack, click to loot. Maybe press an ability button here or there, but you get the idea.",
+              "image": "https://media.rawg.io/media/games/923/923a5dd13b6e79dd23ab2d09934f0e8d.jpg",
+              "key": "action rpg"
+            },
+            "jRPGS": {
+              "option": "I like anime, but in video games.",
+              "image": "https://media.rawg.io/media/games/ae4/ae404f4e0f504131199703c09111bb78.jpg",
+              "key": "jrpg"
+            },
+            "roguelikes": {
+              "option": "I like to die. A lot. I like getting super attached to a character, only to watch them die. Over and over again.",
+              "image": "https://media.rawg.io/media/games/fd9/fd92f105dcd6491bc5d61135033d1f19.jpg",
+              "key": "roguelike"
+            },
+            "openworldRPG": {
+              "option": "I like setting out from the starting area, exploring an endless landscape and living my life how I want t- Wait, you're telling me I'm the chosen one? Me, out of all these NPCs out here?",
+              "image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+              "key": "open world"
+            }
+          }
         }
       },
       "strategy": {
         "option": "Leading a squad, army or nation to victory over its enemies while ignoring the problematic nature of waging large scale wars for fun.",
+        "image": "https://media.rawg.io/media/games/997/997ab4d67e96fb20a4092383477d4463.jpg",
         "key": "strategy",
         "drillDowns": {
           "question": "More of the tactical type, huh? Well, what kind of tactics do you prefer?",
-          "4X": {
-            "option": "I like to eXplore a map, eXpand to dominate that map, eXploit the resources available and eXterminate everything that isn't me.",
-            "key": "4x"
-          },
-          "moba": {
-            "option": "Ok. So there's three lanes, and everyone controls what's called a 'champion', or 'legend'...",
-            "key": "moba"
-          },
-          "rts": {
-            "option": "No turns for me. I like facing off against an opponent, each of us controlling huge armies concurrently. Whoever kills the other's base first, wins. gg no re scrub",
-            "key": "rts"
-          },
-          "tactical": {
-            "option": "I like to plan out squad movements methodically, only to reload an autosave from 30 minutes ago because my best unit just got FREAKING HEADSHOT FROM ACROSS THE MAP",
-            "key": "tactical"
-          },
-          "grandStrategy": {
-            "option": "I like pretending I'm the ruler of an entire nation, waging a war for dominance, survival...and sweet, sweet border expansion.",
-            "key": "grand strategy"
+          "options": {
+            "4X": {
+              "option": "I like to eXplore a map, eXpand to dominate that map, eXploit the resources available and eXterminate everything that isn't me.",
+              "image": "https://media.rawg.io/media/screenshots/51d/51d23baa1ada62b67239a8eec4bca294.jpg",
+              "key": "4x"
+            },
+            "moba": {
+              "option": "Ok. So there's three lanes, and everyone controls what's called a 'champion', or 'legend'...",
+              "image": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg",
+              "key": "moba"
+            },
+            "rts": {
+              "option": "No turns for me. I like facing off against an opponent, each of us controlling huge armies concurrently. Whoever kills the other's base first, wins. gg no re scrub",
+              "image": "https://media.rawg.io/media/games/960/9605c08bf8535c00adbb0a3896f0c484.jpg",
+              "key": "rts"
+            },
+            "tactical": {
+              "option": "I like to plan out squad movements methodically, only to reload an autosave from 30 minutes ago because my best unit just got FREAKING HEADSHOT FROM ACROSS THE MAP",
+              "image": "https://media.rawg.io/media/games/238/2383a172b4d50a7b44e07980eb7141ea.jpg",
+              "key": "tactical"
+            },
+            "grandStrategy": {
+              "option": "I like pretending I'm the ruler of an entire nation, waging a war for dominance, survival...and sweet, sweet border expansion.",
+              "image": "https://media.rawg.io/media/games/92b/92bbf8a451e2742ab812a580546e593a.jpg",
+              "key": "grand strategy"
+            }
           }
         }
       },
       "action": {
         "option": "Using perfect movement, precise timing and unmatched accuracy to dominate a game.",
-        "key": "strategy",
+        "image": "https://media.rawg.io/media/games/dbe/dbeeb30e02b59f55c4d8cf4f103a83b9.jpg",
+        "key": "action",
         "drillDowns": {
           "question": "An action junkie, are you? Alright, what kind of action do you prefer?",
-          "platformer": {
-            "option": "I like falling into a bottomless pit right before the end of the level, then missing the first jump six times in a row.",
-            "key": "platformer"
-          },
-          "shooter": {
-            "option": "I like battling through wave after wave of deadly enemies, chugging Energy Drink TM and clicking heads until everything around me lies dead or dying.",
-            "key": "shooter"
-          },
-          "fighting": {
-            "option": "Hitting combos is my thing. Doesn't matter if its 2D or 3D. My favorite thing to do is learn complex button combinations to perform five second attack animations.",
-            "key": "fighting"
-          },
-          "battleRoyale": {
-            "option": "I wanna be the last person standing in the middle of a deadly circle. No, my escape from that circle isn't explained. Stop asking so many questions.",
-            "key": "battle royale"
-          },
-          "survival": {
-            "option": "I want to explore and find resources so I can keep filling constantly depleting bars. If I run out of food, I die. No water? Dead. Too tired, too bad. Deceased.",
-            "key": "survival"
+          "options": {
+            "platformer": {
+              "option": "I like falling into a bottomless pit right before the end of the level, then missing the first jump six times in a row.",
+              "image": "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg",
+              "key": "platformer"
+            },
+            "shooter": {
+              "option": "I like battling through wave after wave of deadly enemies, chugging Energy Drink TM and clicking heads until everything around me lies dead or dying.",
+              "image": "https://media.rawg.io/media/games/9c5/9c5bc0b6e67102bc96dcf1ba41509e42.jpg",
+              "key": "shooter"
+            },
+            "fighting": {
+              "option": "Hitting combos is my thing. Doesn't matter if its 2D or 3D. My favorite thing to do is learn complex button combinations to perform five-second attack animations.",
+              "image": "https://media.rawg.io/media/games/725/725131e129692ec32ed62e9e405f5f4c.jpg",
+              "key": "fighting"
+            },
+            "battleRoyale": {
+              "option": "I wanna be the last person standing in the middle of a deadly circle. No, my escape from that circle isn't explained. Stop asking so many questions.",
+              "image": "https://media.rawg.io/media/games/d97/d97f663b752a6484df105993f17abb49.jpg",
+              "key": "battle royale"
+            },
+            "survival": {
+              "option": "I want to explore and find resources so I can keep filling constantly depleting bars. If I run out of food, I die. No water? Dead. Too tired, too bad. Deceased.",
+              "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+              "key": "survival"
+            }
           }
         }
       },
       "simulation": {
-        "option": "Meticulously planning every aspect of your world like an all-powerful deity with severe control issues, until it runs exactly how you want it.",
+        "option": "Meticulously planning every aspect of your world like an all-powerful deity with severe control issues.",
+        "image": "https://media.rawg.io/media/screenshots/21a/21a0dacefc6b20dc81c8aad0625eb9a8.jpg",
         "key": "simulation",
         "drillDowns": {
           "question": "Hmmm, you like simulators, do you? Which simulation appeals most to you?",
-          "sports": {
-            "option": "I like playing sports, but on a screen in my house. Instead of outside, with real people.",
-            "key": "sports"
-          },
-          "management": {
-            "option": "I like managing large scale projects, but I didn't go to school to be a city manager so I just play video games instead.",
-            "key": "management"
-          },
-          "racing": {
-            "option": "I like going the distance. Going for speed. She's all alone (all alone) in her time of need. (I like racing games)",
-            "key": "racing"
-          },
-          "flight": {
-            "option": "I wanna fly planes and spaceships. That's it. No special requirements. Just give me a plane or a spaceship, and I'll fly that thing for hours.",
-            "key": "flight"
-          },
-          "lifeSim": {
-            "option": "I want to live another life. Take video games to their furthest extent, and they're just simulations of the real world. I have no way of knowing whether my in-game character is self-aware. And they'd have no way of knowing that I exist. What if we're the sims? Who's playing our game?",
-            "key": "life sim"
+          "options": {
+            "sports": {
+              "option": "I like playing sports, but on a screen in my house. Instead of outside, with real people.",
+              "image": "https://media.rawg.io/media/screenshots/2d0/2d0eeaf3a2b7945183dc98a4bcc29d5f.jpg",
+              "key": "sports"
+            },
+            "management": {
+              "option": "I like managing large scale projects, but I didn't go to school to be a city manager so I just play video games instead.",
+              "image": "https://media.rawg.io/media/games/25c/25c4776ab5723d5d735d8bf617ca12d9.jpg",
+              "key": "management"
+            },
+            "racing": {
+              "option": "I like going the distance. Going for speed. She's all alone (all alone) in her time of need. (I like racing games)",
+              "image": "https://media.rawg.io/media/games/30a/30afe3a3cb06849dc032ef3b9295f180.jpg",
+              "key": "racing"
+            },
+            "flight": {
+              "option": "I wanna fly planes and spaceships. That's it. No special requirements. Just give me a plane or a spaceship, and I'll fly that thing for hours.",
+              "image": "https://media.rawg.io/media/games/89c/89ceadfd42109aa0d80e9c5dbc86f277.jpg",
+              "key": "flight"
+            },
+            "lifeSim": {
+              "option": "I want to live another life. Take video games to their furthest extent, and they're just simulations of the real world. I have no way of knowing whether my in-game character is self-aware. And they'd have no way of knowing that I exist. What if we're the sims? Who's playing our game?",
+              "image": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg",
+              "key": "life sim"
+            }
           }
         }
       },
       "adventure": {
         "option": "Getting the rush of discovery from exploring a new area that you had to look at the wiki to figure out how to get to.",
-        "key": "adventure"
+        "image": "https://media.rawg.io/media/games/0fb/0fbf589c40c4fc3095f8e29d1296d09e.jpg",
+        "key": "adventure",
+        "drillDowns": {
+          "question": "Ahh the adventuring type... Let's see what kind of adventurer you really are.",
+          "options": {
+            "metroidvania": {
+              "option": "I want most of the game to be unreachable until I collect certain items. Also platforming. Lots of platforming.",
+              "image": "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg",
+              "key": "metroidvania"
+            },
+            "survivalHorror": {
+              "option": "I enjoy being scared out of my mind. It's a hobby. That feeling you get when you think something's following you? Take that and condense it into a video game.",
+              "image": "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
+              "key": "survival horror"
+            }
+          }
+        }
       }
     }
   }

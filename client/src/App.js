@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './utils/API';
-import { Grommet, Button, Heading, Box } from 'grommet';
+import { Grommet, Button, Heading } from 'grommet';
 import { Notification } from 'grommet-icons';
 import AppBar from './components/AppBar';
-import MyCard from './components/MyCard';
+// import MyCard from './components/MyCard';
 import Landing from './pages/Landing';
 import {
   Redirect,
@@ -30,6 +30,11 @@ const theme = {
       size: '18px',
       height: '20px',
     },
+    image: {
+      extend: {
+        borderRadius: '25px',
+      },
+    },
   },
 };
 
@@ -43,10 +48,8 @@ function App() {
       if (event.origin !== process.env.REACT_APP_API_URL) {
         return;
       }
-      console.log(event.data);
       const { games, ok } = event.data;
       if (ok) {
-        console.log(JSON.parse(games));
         setGamesState({
           games: JSON.parse(games),
         });

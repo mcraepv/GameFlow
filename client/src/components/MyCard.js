@@ -1,40 +1,48 @@
-import { FormPrevious } from 'grommet-icons';
 import React from 'react';
 import {
   Card,
   Button,
-  CardHeader,
+  Box,
   CardFooter,
   CardBody,
-  Heading,
   Paragraph,
+  CardHeader,
+  Image,
 } from 'grommet';
-import { Favorite, ShareOption } from 'grommet-icons';
 
 const MyCard = (props) => {
+  const imageStyle = {
+    height: '160px',
+  };
+
   return (
     <Card
       height="medium"
       elevation="none"
-      width="medium"
+      width={{ min: '200px', max: '250px' }}
       background="card"
-      margin={{ horizontal: 'medium' }}
+      margin="small"
     >
-      <CardHeader pad="medium">
-        <Heading level="4" margin="none" color="lightPurp">
-          Header
-        </Heading>
+      <CardHeader>
+        <Image fill={true} src={props.image} fit="cover" style={imageStyle} />
       </CardHeader>
-      <CardBody pad="medium">
-        <Paragraph color="lightPurp" margin="none">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <CardBody pad="medium" align="center">
+        <Paragraph color="lightPurp" margin="none" textAlign="center">
+          {props.text}
         </Paragraph>
       </CardBody>
-      <CardFooter pad={{ horizontal: 'small' }} background="lightGray">
-        <Button icon={<Favorite color="red" />} hoverIndicator />
-        <Button icon={<ShareOption color="plain" />} hoverIndicator />
-      </CardFooter>
+      <Box pad="small">
+        <Button
+          hoverIndicator
+          secondary
+          onClick={() => {
+            props.clickHandler(props.tag);
+          }}
+          alignSelf="center"
+        >
+          {props.btnText}
+        </Button>
+      </Box>
     </Card>
   );
 };
