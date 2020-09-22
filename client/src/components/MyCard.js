@@ -3,11 +3,11 @@ import {
   Card,
   Button,
   Box,
-  CardFooter,
   CardBody,
   Paragraph,
   CardHeader,
   Image,
+  Heading,
 } from 'grommet';
 import { Favorite } from 'grommet-icons';
 
@@ -28,15 +28,20 @@ const MyCard = (props) => {
         <Image fill={true} src={props.image} fit="cover" style={imageStyle} />
       </CardHeader>
       <CardBody pad="medium" align="center">
-        <Paragraph color="lightPurp" margin="none" textAlign="center">
-          {props.text}
-        </Paragraph>
+        {props.tag ? (
+          <Paragraph color="lightPurp" margin="none" textAlign="center">
+            {props.text}
+          </Paragraph>
+        ) : (
+          <Heading level="4" margin="none" color="lightPurp" textAlign="center">
+            {props.text}
+          </Heading>
+        )}
       </CardBody>
       {props.tag ? (
         <Box pad="small">
           <Button
             hoverIndicator
-            secondary
             onClick={() => {
               props.clickHandler(props.tag);
             }}
@@ -49,7 +54,6 @@ const MyCard = (props) => {
         <Box pad="small">
           <Button
             hoverIndicator
-            secondary
             onClick={() => {
               props.clickHandler(props.text);
             }}

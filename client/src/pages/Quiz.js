@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Heading, Box, Paragraph, Image, Grid } from 'grommet';
+import { Heading, Box } from 'grommet';
 import API from '../utils/API';
 import MyCard from '../components/MyCard';
 
@@ -98,7 +98,7 @@ const Quiz = ({ updateTags }) => {
       background="background"
       pad="xlarge"
     >
-      <Heading level="3" margin="none" color="lightPurp" textAlign="center">
+      <Heading level="2" margin="none" color="lightPurp" textAlign="center">
         {uiState.question}
       </Heading>
       <Box flex direction="row" justify="center" pad="large" wrap={true}>

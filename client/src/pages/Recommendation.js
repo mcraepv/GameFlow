@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Heading, Box, Paragraph, Image, Grid } from 'grommet';
+import { Button, Heading, Box } from 'grommet';
 import MyCard from '../components/MyCard';
-import { get } from 'mongoose';
 
 const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
   const [matchedGamesState, setMatchedGamesState] = useState([]);
@@ -26,14 +25,6 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
         imgURL: game.imgURL,
         matches: 0,
       };
-      // tagsArr.forEach((tag) => {
-      //   game.genres.forEach((genre) => {
-      //     const parsedGenre = genre.toLowerCase();
-      //     if (parsedGenre === tag) {
-      //       matchedGame.matches += 1;
-      //     }
-      //   });
-      // });
       game.genres.forEach(
         (genre) =>
           (matchedGame.matches = tagsArr.includes(genre.toLowerCase())
@@ -65,7 +56,7 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
       });
       desiredMatches--;
     } while (gameCards.length <= 5 && desiredMatches >= 0);
-    setUIState({ gameCards: gameCards.slice(0, 5) });
+    setUIState({ gameCards: gameCards.slice(0, 10) });
   };
 
   return (
@@ -78,10 +69,21 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
       pad="xlarge"
     >
       <Heading level="3" margin="none" color="lightPurp" textAlign="center">
-        Hello McRae!
+        Based on your quiz results, these games might be a good fit!
       </Heading>
       <Box flex direction="row" justify="center" pad="large" wrap={true}>
         {uiState.gameCards}
+      </Box>
+      <Box flex direction="row" justify="center" pad="large" wrap={true}>
+        <Button
+          hoverIndicator
+          primary
+          onClick={resetQuiz}
+          alignSelf="center"
+          size="large"
+        >
+          Reset Quiz
+        </Button>
       </Box>
     </Box>
   );

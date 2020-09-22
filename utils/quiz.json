@@ -3,14 +3,14 @@
     "question": "Let's start with broad strokes. Pick The scenario that sounds most fun to you.",
     "options": {
       "rpg": {
-        "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default option, then rolling the same glass cannon you always do.",
+        "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default, then rolling another stealth archer.",
         "image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
         "key": "rpg",
         "drillDowns": {
           "question": "So you like role playing, eh? Well, what type of role playing sounds best to you?",
           "options": {
             "tacticalRPG": {
-              "option": "I like overlooking a battlefield and controlling a squad of hitters, each doing what they do best. What they do best is dictated by me, of course.",
+              "option": "I like overlooking a battlefield and controlling a squad of hitters, each doing what they do best.",
               "image": "https://media.rawg.io/media/games/530/53081dbd5003f990fa5312404ac3d71a.jpg",
               "key": "crpg"
             },
@@ -30,7 +30,7 @@
               "key": "roguelike"
             },
             "openworldRPG": {
-              "option": "I like setting out from the starting area, exploring an endless landscape and living my life how I want t- Wait, you're telling me I'm the chosen one? Me, out of all these NPCs out here?",
+              "option": "I like setting out, exploring an endless landscape and living my life how I want t- Wait, you're telling me I'm the chosen one?",
               "image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
               "key": "open world"
             }
@@ -55,12 +55,12 @@
               "key": "moba"
             },
             "rts": {
-              "option": "No turns for me. I like facing off against an opponent, each of us controlling huge armies concurrently. Whoever kills the other's base first, wins. gg no re scrub",
+              "option": "No turns for me. I like facing off against an opponent, each of us controlling huge armies concurrently.",
               "image": "https://media.rawg.io/media/games/960/9605c08bf8535c00adbb0a3896f0c484.jpg",
               "key": "rts"
             },
             "tactical": {
-              "option": "I like to plan out squad movements methodically, only to reload an autosave from 30 minutes ago because my best unit just got FREAKING HEADSHOT FROM ACROSS THE MAP",
+              "option": "I like to plan out squad movements methodically, only to reload a 30-minute old autosave because my best unit just got HEADSHOT FROM ACROSS THE MAP",
               "image": "https://media.rawg.io/media/games/238/2383a172b4d50a7b44e07980eb7141ea.jpg",
               "key": "tactical"
             },
@@ -85,12 +85,12 @@
               "key": "platformer"
             },
             "shooter": {
-              "option": "I like battling through wave after wave of deadly enemies, chugging Energy Drink TM and clicking heads until everything around me lies dead or dying.",
+              "option": "I like battling through wave after wave of deadly enemies, chugging Energy Drink TM and clicking heads.",
               "image": "https://media.rawg.io/media/games/9c5/9c5bc0b6e67102bc96dcf1ba41509e42.jpg",
               "key": "shooter"
             },
             "fighting": {
-              "option": "Hitting combos is my thing. Doesn't matter if its 2D or 3D. My favorite thing to do is learn complex button combinations to perform five-second attack animations.",
+              "option": "My favorite thing to do is learn complex button combinations to perform five-second attack animations.",
               "image": "https://media.rawg.io/media/games/725/725131e129692ec32ed62e9e405f5f4c.jpg",
               "key": "fighting"
             },
@@ -130,7 +130,7 @@
               "key": "flight"
             },
             "lifeSim": {
-              "option": "I want to live another life. Take video games to their furthest extent, and they're just simulations of the real world. I have no way of knowing whether my in-game character is self-aware. And they'd have no way of knowing that I exist. What if we're the sims? Who's playing our game?",
+              "option": "Take video games to their furthest extent, and they're just simulations of the real world. What if we're the sims? Who's playing our game?",
               "image": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg",
               "key": "life sim"
             }
@@ -150,7 +150,7 @@
               "key": "metroidvania"
             },
             "survivalHorror": {
-              "option": "I enjoy being scared out of my mind. It's a hobby. That feeling you get when you think something's following you? Take that and condense it into a video game.",
+              "option": "That feeling you get when you think something's following you? Take that and condense it into a video game.",
               "image": "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
               "key": "survival horror"
             },
@@ -160,7 +160,7 @@
               "key": "stealth"
             },
             "survival": {
-              "option": "I want to explore and find resources so I can keep filling constantly depleting bars. If I run out of food, I die. No water? Dead. Too tired, too bad. Deceased.",
+              "option": "I prefer extreme realism. If I run out of food, I die. No water? Dead. Too tired? Too bad. Deceased.",
               "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
               "key": "survival"
             }

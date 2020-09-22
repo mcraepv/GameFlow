@@ -15,6 +15,11 @@ import {
 
 const theme = {
   global: {
+    active: {
+      background: {
+        color: '#202124',
+      },
+    },
     colors: {
       darkPurp: '#B64FC8',
       lightPurp: '#FFB2FF',
@@ -33,6 +38,35 @@ const theme = {
       extend: {
         borderRadius: '25px',
       },
+    },
+  },
+  button: {
+    default: {
+      background: {
+        color: '#202124',
+      },
+      border: {
+        color: '#FFB2FF',
+      },
+    },
+    primary: {
+      background: {
+        color: '#B64FC8',
+      },
+      border: {
+        color: '#0e0f10',
+      },
+      hover: {
+        background: {
+          color: '#B64FC8',
+        },
+      },
+    },
+    background: {
+      color: '#202124',
+    },
+    border: {
+      color: '#FFB2FF',
     },
   },
 };
@@ -112,6 +146,7 @@ function App() {
                 resetQuiz={resetQuiz}
                 tagsArr={tagsArrState}
                 games={gamesState.games}
+                addToFavorites={addToFavorites}
               />
             ) : (
               <Redirect to="/" />
@@ -134,8 +169,7 @@ export default App;
 //#3C4042 - dark gray
 //#A0A4A9 - off white - text
 
-{
-  /*<Box
+/*<Box
   flex
   align="center"
   direction="row"
@@ -146,4 +180,3 @@ export default App;
   <MyCard />
   <MyCard />
 </Box>  */
-}
