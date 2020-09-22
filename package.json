@@ -1,5 +1,5 @@
 {
-  "name": "gameflowapi",
+  "name": "GameFlow",
   "version": "1.0.0",
   "description": "GameFlow solves the choice paralysis problem many gamers encounter when trying to decide what to play next. Users can simply log into their Steam accounts and take a short quiz, and GameFlow gives them a suggestion and saves their results. Users can also look through past quiz results.",
   "main": "server.js",

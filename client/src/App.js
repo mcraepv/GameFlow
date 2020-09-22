@@ -91,11 +91,10 @@ function App() {
     });
   });
   const login = () => {
-    const popupWindow = window.open(
-      `${process.env.REACT_APP_API_URL}/auth/steam`,
-      '_blank',
-      'width=800, height=600'
-    );
+    const path = process.env.REACT_APP_API_URL
+      ? `${process.env.REACT_APP_API_URL}/auth/steam`
+      : '/auth/steam';
+    const popupWindow = window.open(path, '_blank', 'width=800, height=600');
     if (window.focus) popupWindow.focus();
   };
 
