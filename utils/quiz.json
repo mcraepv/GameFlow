@@ -98,11 +98,6 @@
               "option": "I wanna be the last person standing in the middle of a deadly circle. No, my escape from that circle isn't explained. Stop asking so many questions.",
               "image": "https://media.rawg.io/media/games/d97/d97f663b752a6484df105993f17abb49.jpg",
               "key": "battle royale"
-            },
-            "survival": {
-              "option": "I want to explore and find resources so I can keep filling constantly depleting bars. If I run out of food, I die. No water? Dead. Too tired, too bad. Deceased.",
-              "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
-              "key": "survival"
             }
           }
         }
@@ -158,9 +153,79 @@
               "option": "I enjoy being scared out of my mind. It's a hobby. That feeling you get when you think something's following you? Take that and condense it into a video game.",
               "image": "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
               "key": "survival horror"
+            },
+            "stealth": {
+              "option": "I habitually avoid conflict because confrontation frightens me. I'd rather sneak around my problems.",
+              "image": "https://media.rawg.io/media/games/b27/b27eea9f8df280799b357b320f01211c.jpg",
+              "key": "stealth"
+            },
+            "survival": {
+              "option": "I want to explore and find resources so I can keep filling constantly depleting bars. If I run out of food, I die. No water? Dead. Too tired, too bad. Deceased.",
+              "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+              "key": "survival"
             }
           }
         }
+      }
+    }
+  },
+  "settingQ": {
+    "question": "If you had to pick one, what kind of game world would you want to run around in?",
+    "options": {
+      "fantasy": {
+        "option": "Just give me another Middle Earth clone please.",
+        "image": "https://media.rawg.io/media/games/936/93643e6e38420134882f69625c98f4de.jpg",
+        "key": "fantasy"
+      },
+      "sci-fi": {
+        "option": "If it has aliens, spaceships or time travel, I'm in.",
+        "image": "https://media.rawg.io/media/games/315/3156817d3ac1f341da73de6495fb28f5.jpg",
+        "key": "sci-fi"
+      },
+      "historical": {
+        "option": "I enjoy feeling like I'm in history class when playing video games.",
+        "image": "https://media.rawg.io/media/games/0fa/0fadc446fd1e9ae9e23a32793d9a5406.jpg",
+        "key": "historical"
+      },
+      "post-apocalyptic": {
+        "option": "I'm the kind of person who thinks the end of the world would be really fun to live in.",
+        "image": "https://media.rawg.io/media/games/a5a/a5a7fb8d9cb8063a8b42ee002b410db6.jpg",
+        "key": "post-apocalyptic"
+      },
+      "none": {
+        "option": "I'm not partial, I'll play any setting.",
+        "image": "https://media.rawg.io/media/games/ffe/ffed87105b14f5beff72ff44a7793fd5.jpg",
+        "key": ""
+      }
+    }
+  },
+  "playerQ": {
+    "question": "Are you a social animal, or a lone wolf?",
+    "options": {
+      "mmo": {
+        "option": "Oh I'm social alright. MASSIVELY social.",
+        "image": "https://media.rawg.io/media/games/1dc/1dca31934274ae06195b71cafe56f375.jpg",
+        "key": "mmo"
+      },
+      "cooperative": {
+        "option": "I like people, but only if we're working together.",
+        "image": "https://media.rawg.io/media/screenshots/6dc/6dcf137b7607bd9e329ae39dd6b89562.jpg",
+        "key": "cooperative"
+      },
+      "singleplayer": {
+        "option": "I'm the only gamer I know who's good enough to play with me.",
+        "image": "https://media.rawg.io/media/games/995/9951d9d55323d08967640f7b9ab3e342.jpg",
+        "key": "singleplayer"
+      },
+      "multiplayer": {
+        "option": "The only time I enjoy games is when I'm enjoying them at the expense of others.",
+        "image": "https://media.rawg.io/media/games/7e3/7e327a055bedb9b6d1be86593bef473d.jpg",
+        "key": "multiplayer"
+      },
+      "none": {
+        "option": "Doesn't matter to me, I'm just glad to be here!",
+        "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+        "key": ""
       }
     }
   }

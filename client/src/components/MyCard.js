@@ -31,18 +31,33 @@ const MyCard = (props) => {
           {props.text}
         </Paragraph>
       </CardBody>
-      <Box pad="small">
-        <Button
-          hoverIndicator
-          secondary
-          onClick={() => {
-            props.clickHandler(props.tag);
-          }}
-          alignSelf="center"
-        >
-          {props.btnText}
-        </Button>
-      </Box>
+      {props.tag ? (
+        <Box pad="small">
+          <Button
+            hoverIndicator
+            secondary
+            onClick={() => {
+              props.clickHandler(props.tag);
+            }}
+            alignSelf="center"
+          >
+            {props.btnText}
+          </Button>
+        </Box>
+      ) : (
+        <Box pad="small">
+          <Button
+            hoverIndicator
+            secondary
+            onClick={() => {
+              props.clickHandler();
+            }}
+            alignSelf="center"
+          >
+            {props.btnText}
+          </Button>
+        </Box>
+      )}
     </Card>
   );
 };

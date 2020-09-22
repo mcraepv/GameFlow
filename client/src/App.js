@@ -3,16 +3,15 @@ import './utils/API';
 import { Grommet, Button, Heading } from 'grommet';
 import { Notification } from 'grommet-icons';
 import AppBar from './components/AppBar';
-// import MyCard from './components/MyCard';
 import Landing from './pages/Landing';
+import Quiz from './pages/Quiz';
+import Recommendation from './pages/Recommendation';
 import {
   Redirect,
   BrowserRouter as Router,
   Route,
   Switch,
 } from 'react-router-dom';
-import GamesContext from './utils/GamesContext';
-import Quiz from './pages/Quiz';
 
 const theme = {
   global: {
@@ -42,6 +41,7 @@ function App() {
   const [gamesState, setGamesState] = useState({
     games: [],
   });
+  const [tagsArrState, setTagsArrState] = useState([]);
 
   useEffect(() => {
     window.addEventListener('message', (event) => {
@@ -65,6 +65,14 @@ function App() {
     if (window.focus) popupWindow.focus();
   };
 
+  const updateTags = (tagsArr) => {
+    setTagsArrState(tagsArr);
+  };
+
+  const resetQuiz = () => {
+    setTagsArrState([]);
+  };
+
   return (
     <Router>
       <Grommet theme={theme} full>
@@ -77,18 +85,33 @@ function App() {
             onClick={() => {}}
           />
         </AppBar>
-        <GamesContext.Provider value={gamesState}>
-          <Switch>
-            <Route exact path="/">
-              {gamesState.games.length ? (
-                <Redirect to="/quiz" />
-              ) : (
-                <Landing login={login} />
-              )}
-            </Route>
-            <Route exact path="/quiz" component={Quiz} />
-          </Switch>
-        </GamesContext.Provider>
+        <Switch>
+          <Route exact path="/">
+            {gamesState.games.length && !tagsArrState.length ? (
+              <Redirect to="/quiz" />
+            ) : (
+              <Landing login={login} />
+            )}
+          </Route>
+          <Route exact path="/quiz">
+            {tagsArrState.length ? (
+              <Redirect to="/recommendation" />
+            ) : (
+              <Quiz updateTags={updateTags} />
+            )}
+          </Route>
+          <Route exact path="/recommendation">
+            {tagsArrState.length ? (
+              <Recommendation
+                resetQuiz={resetQuiz}
+                tagsArr={tagsArrState}
+                games={gamesState.games}
+              />
+            ) : (
+              <Redirect to="/" />
+            )}
+          </Route>
+        </Switch>
       </Grommet>
     </Router>
   );
