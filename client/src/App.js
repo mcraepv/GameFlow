@@ -73,6 +73,10 @@ function App() {
     setTagsArrState([]);
   };
 
+  const addToFavorites = (title) => {
+    console.log(`${title} was added to favorites!`);
+  };
+
   return (
     <Router>
       <Grommet theme={theme} full>
@@ -96,8 +100,10 @@ function App() {
           <Route exact path="/quiz">
             {tagsArrState.length ? (
               <Redirect to="/recommendation" />
-            ) : (
+            ) : gamesState.games.length ? (
               <Quiz updateTags={updateTags} />
+            ) : (
+              <Redirect to="/" />
             )}
           </Route>
           <Route exact path="/recommendation">

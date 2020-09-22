@@ -9,6 +9,7 @@ import {
   CardHeader,
   Image,
 } from 'grommet';
+import { Favorite } from 'grommet-icons';
 
 const MyCard = (props) => {
   const imageStyle = {
@@ -50,12 +51,11 @@ const MyCard = (props) => {
             hoverIndicator
             secondary
             onClick={() => {
-              props.clickHandler();
+              props.clickHandler(props.text);
             }}
             alignSelf="center"
-          >
-            {props.btnText}
-          </Button>
+            icon={<Favorite color="lightPurp" />}
+          />
         </Box>
       )}
     </Card>
