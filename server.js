@@ -43,7 +43,11 @@ app.get(
 );
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  const root = path.join(__dirname, 'client', 'build');
+  app.use(express.static(root));
+  app.get('*', (req, res) => {
+    res.sendFile('index.html', { root });
+  });
 }
 
 app.use(routes);
