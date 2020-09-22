@@ -17,20 +17,14 @@ module.exports = {
         title = title.replace(/®/g, '');
         title = title.replace(/©/g, '');
       }
-      const genres = await API.getGameGenres(title);
+      const genresAndImgURL = await API.getGameGenresAndImgURL(title);
       let newGame;
-      if (genres) {
-        newGame = {
-          title: title,
-          genres: genres,
-          appID: appID,
-        };
-      } else {
-        newGame = {
-          title: title,
-          appID: appID,
-        };
-      }
+      newGame = {
+        title: title,
+        genres: genresAndImgURL.genresArr,
+        appID: appID,
+        imgURL: genresAndImgURL.imgURL,
+      };
       game = await db.Game.create(newGame);
     }
     return game;

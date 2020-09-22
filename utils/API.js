@@ -44,7 +44,7 @@ module.exports = {
     return game;
   },
 
-  getGameGenres: async (title) => {
+  getGameGenresAndImgURL: async (title) => {
     const URL = `${rawgBaseURL}${title}`;
     const res = await axios.get(URL, {
       headers: rawgHeader,
@@ -58,19 +58,24 @@ module.exports = {
         break;
       }
     }
-    const genresArr = [];
+    const response = {
+      genresArr: [],
+      imgURL: '',
+    };
+
     if (result) {
       result.tags.forEach((tag) => {
         const regex = /^[a-zA-Z0-9!@#\$%\^\&*\)\(+=._-]+$/g;
         if (regex.test(tag.name)) {
-          genresArr.push(tag.name);
+          response.genresArr.push(tag.name);
         }
       });
       result.genres.forEach((genre) => {
-        genresArr.push(genre.name);
+        response.genresArr.push(genre.name);
       });
+      response.imgURL = result.background_image;
     }
-    return genresArr;
+    return response;
   },
 };
 
