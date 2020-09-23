@@ -79,11 +79,12 @@ function App() {
 
   useEffect(() => {
     window.addEventListener('message', (event) => {
-      if (event.origin !== process.env.REACT_APP_API_URL) {
+      if (!event.data.gamesRes) {
         return;
       }
       const { games, ok } = event.data;
       if (ok) {
+        console.log(ok);
         setGamesState({
           games: JSON.parse(games),
         });

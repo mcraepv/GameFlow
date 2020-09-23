@@ -30,11 +30,6 @@ app.get(
   '/auth/steam/return',
   passport.authenticate('steam', { failureRedirect: '/' }),
   function (req, res) {
-    // res.redirect('/');
-    console.log(req.user);
-    // console.log('this is the request:', req);
-    // console.log('this is the response:', res);
-    console.log('auth/steam/return');
     res.render('authenticated', {
       games: req.user,
       clientUrl: process.env.FRONTEND_URL,
