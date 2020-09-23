@@ -1,6 +1,6 @@
 {
   "genreQ": {
-    "question": "Let's start with broad strokes. Pick The scenario that sounds most fun to you.",
+    "question": "Let's start with broad strokes. Pick the scenario that sounds most fun to you.",
     "options": {
       "rpg": {
         "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default, then rolling another stealth archer.",
@@ -60,7 +60,7 @@
               "key": "rts"
             },
             "tactical": {
-              "option": "I like to plan out squad movements methodically, only to reload a 30-minute old autosave because my best unit just got HEADSHOT FROM ACROSS THE MAP",
+              "option": "I methodically plan strategies only to reload a 30-minute old autosave because my best unit just got HEADSHOT FROM ACROSS THE MAP",
               "image": "https://media.rawg.io/media/games/238/2383a172b4d50a7b44e07980eb7141ea.jpg",
               "key": "tactical"
             },
@@ -130,7 +130,7 @@
               "key": "flight"
             },
             "lifeSim": {
-              "option": "Take video games to their furthest extent, and they're just simulations of the real world. What if we're the sims? Who's playing our game?",
+              "option": "Take video games to their furthest extent, and they're just simulations of the real world. What if we're the sims?",
               "image": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg",
               "key": "life sim"
             }

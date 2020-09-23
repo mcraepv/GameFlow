@@ -50,8 +50,12 @@ const theme = {
       },
     },
     primary: {
+      color: '#202124',
+      font: {
+        weight: 'bold',
+      },
       background: {
-        color: '#B64FC8',
+        color: '#FFB2FF',
       },
       border: {
         color: '#0e0f10',
@@ -93,7 +97,7 @@ function App() {
   });
   const login = () => {
     const path = process.env.REACT_APP_API_URL
-      ? `${process.env.REACT_APP_API_URL}auth/steam`
+      ? `${process.env.REACT_APP_API_URL}/auth/steam`
       : '/auth/steam';
     const popupWindow = window.open(path, '_blank', 'width=800, height=600');
     if (window.focus) popupWindow.focus();

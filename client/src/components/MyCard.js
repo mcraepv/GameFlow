@@ -18,7 +18,7 @@ const MyCard = (props) => {
 
   return (
     <Card
-      height="medium"
+      height={props.tag ? 'medium' : '290px'}
       elevation="none"
       width={{ min: '200px', max: '250px' }}
       background="card"
@@ -29,11 +29,11 @@ const MyCard = (props) => {
       </CardHeader>
       <CardBody pad="medium" align="center">
         {props.tag ? (
-          <Paragraph color="lightPurp" margin="none" textAlign="center">
+          <Paragraph margin="none" textAlign="center">
             {props.text}
           </Paragraph>
         ) : (
-          <Heading level="4" margin="none" color="lightPurp" textAlign="center">
+          <Heading level="4" margin="none" textAlign="center">
             {props.text}
           </Heading>
         )}
@@ -46,6 +46,7 @@ const MyCard = (props) => {
               props.clickHandler(props.tag);
             }}
             alignSelf="center"
+            primary
           >
             {props.btnText}
           </Button>
