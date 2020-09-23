@@ -11,7 +11,7 @@ module.exports = (passport) => {
   });
 
   const productionVars = {
-    returnURL: `${process.env.PORT}/auth/steam/return`,
+    returnURL: `https://secret-wildwood-10554.herokuapp.com/auth/steam/return`,
     realm: 'https://secret-wildwood-10554.herokuapp.com/',
     apiKey: 'C4559EEF7DAF679ED65CF8FB368F5868',
   };
