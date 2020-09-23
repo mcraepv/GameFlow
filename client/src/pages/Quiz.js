@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Heading, Box } from 'grommet';
-import API from '../utils/API';
+// import API from '../utils/API';
+import quiz from '../utils/quiz.json';
 import MyCard from '../components/MyCard';
 
 const Quiz = ({ updateTags }) => {
-  const [quizState, setQuizState] = useState();
+  const [quizState, setQuizState] = useState(quiz);
   const [uiState, setUIState] = useState({
     question: '',
     options: [],
@@ -12,9 +13,9 @@ const Quiz = ({ updateTags }) => {
   const [answeredState, setAnsweredState] = useState(0);
   const [tagsArrState, setTagsArrState] = useState([]);
 
-  useEffect(() => {
-    getQuiz();
-  }, []);
+  // useEffect(() => {
+  //   getQuiz();
+  // }, []);
 
   useEffect(() => {
     if (quizState) stageQuiz();
@@ -32,10 +33,10 @@ const Quiz = ({ updateTags }) => {
     }
   }, [answeredState]);
 
-  const getQuiz = async () => {
-    const quiz = await API.getQuiz();
-    setQuizState(quiz.data);
-  };
+  // const getQuiz = async () => {
+  //   const quiz = await API.getQuiz();
+  //   setQuizState(quiz.data);
+  // };
 
   const handleOptionSelect = (tag) => {
     if (tag !== 'none') {
