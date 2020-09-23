@@ -21,13 +21,11 @@ const Quiz = ({ updateTags }) => {
   }, [quizState]);
 
   useEffect(() => {
-    console.log('tagsArrState');
     if (tagsArrState.length) setAnsweredState(answeredState + 1);
   }, [tagsArrState]);
 
   useEffect(() => {
     if (answeredState < 4 && answeredState) {
-      console.log('answered state');
       stageQuiz();
     } else {
       updateTags(tagsArrState);
