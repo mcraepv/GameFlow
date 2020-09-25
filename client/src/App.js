@@ -88,7 +88,6 @@ function App() {
       }
       const { games, ok } = event.data;
       if (ok) {
-        console.log(ok);
         setGamesState({
           games: JSON.parse(games),
         });

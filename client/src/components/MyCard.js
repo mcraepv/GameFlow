@@ -43,7 +43,9 @@ const MyCard = (props) => {
           <Button
             hoverIndicator
             onClick={() => {
-              props.clickHandler(props.tag);
+              props.tested
+                ? props.clickHandler(props.tag, props.tested)
+                : props.clickHandler(props.tag);
             }}
             alignSelf="center"
             primary
