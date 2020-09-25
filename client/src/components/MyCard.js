@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   Button,
@@ -12,6 +12,8 @@ import {
 import { Favorite } from 'grommet-icons';
 
 const MyCard = (props) => {
+  const [hoverState, setHoverState] = useState(false);
+
   const imageStyle = {
     height: '160px',
   };
@@ -23,6 +25,8 @@ const MyCard = (props) => {
       width={{ min: '200px', max: '250px' }}
       background="card"
       margin="small"
+      className="card"
+      animation={['fadeIn', 'zoomIn']}
     >
       <CardHeader>
         <Image fill={true} src={props.image} fit="cover" style={imageStyle} />

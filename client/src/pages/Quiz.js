@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Heading, Box } from 'grommet';
 import quiz from '../utils/quiz.json';
 import MyCard from '../components/MyCard';
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 const Quiz = ({ updateTags }) => {
   const [quizState, setQuizState] = useState(quiz);
@@ -27,7 +28,6 @@ const Quiz = ({ updateTags }) => {
 
   useEffect(() => {
     if (answeredState.isIteration && !answeredState.playersSelected)
-      // stageQuiz();
       setUIState({
         question: '',
         options: [],
@@ -314,6 +314,7 @@ const Quiz = ({ updateTags }) => {
       <Heading level="2" margin="none" color="lightPurp" textAlign="center">
         {uiState.question}
       </Heading>
+
       <Box flex direction="row" justify="center" pad="large" wrap={true}>
         {uiState.options}
       </Box>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './utils/API';
-import { Grommet, Button, Heading } from 'grommet';
+import { Grommet, Button, Heading, Anchor, Box } from 'grommet';
 import { Notification } from 'grommet-icons';
 import AppBar from './components/AppBar';
 import Landing from './pages/Landing';
@@ -12,68 +12,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-
-const theme = {
-  global: {
-    active: {
-      background: {
-        color: '#202124',
-      },
-    },
-    colors: {
-      darkPurp: '#B64FC8',
-      lightPurp: '#FFB2FF',
-      background: '#202124',
-      card: '#3C4042',
-      primary: '#0e0f10',
-      lightGray: '#A0A4A9',
-      focus: '#FFB2FF',
-    },
-    font: {
-      family: 'Ubuntu',
-      size: '18px',
-      height: '20px',
-    },
-    image: {
-      extend: {
-        borderRadius: '25px',
-      },
-    },
-  },
-  button: {
-    default: {
-      background: {
-        color: '#202124',
-      },
-      border: {
-        color: '#FFB2FF',
-      },
-    },
-    primary: {
-      color: '#202124',
-      font: {
-        weight: 'bold',
-      },
-      background: {
-        color: '#FFB2FF',
-      },
-      border: {
-        color: '#0e0f10',
-      },
-      hover: {
-        background: {
-          color: '#B64FC8',
-        },
-      },
-    },
-    background: {
-      color: '#202124',
-    },
-    border: {
-      color: '#FFB2FF',
-    },
-  },
-};
+import theme from './utils/theme';
 
 function App() {
   const [gamesState, setGamesState] = useState({
@@ -82,6 +21,12 @@ function App() {
   const [tagsArrState, setTagsArrState] = useState([]);
 
   useEffect(() => {
+    const games = localStorage.getItem('games');
+    if (games) {
+      setGamesState({
+        games: JSON.parse(games),
+      });
+    }
     window.addEventListener('message', (event) => {
       if (!event.data.gamesRes) {
         return;
@@ -91,9 +36,10 @@ function App() {
         setGamesState({
           games: JSON.parse(games),
         });
+        localStorage.setItem('games', games);
       }
     });
-  });
+  }, []);
   const login = () => {
     const path = process.env.REACT_APP_API_URL
       ? `${process.env.REACT_APP_API_URL}/auth/steam`
@@ -118,13 +64,34 @@ function App() {
     <Router>
       <Grommet theme={theme} full>
         <AppBar margin={{ bottom: 'large' }}>
-          <Heading level="3" margin="none" color="lightPurp">
-            GameFlow
-          </Heading>
-          <Button
-            icon={<Notification color="lightPurp" />}
-            onClick={() => {}}
-          />
+          <Anchor href="/">
+            <Heading level="3" margin="none" color="lightPurp">
+              GameFlow
+            </Heading>
+          </Anchor>
+          {gamesState.games.length ? (
+            <Box direction="row">
+              <Button
+                label="Favorites"
+                hoverIndicator
+                alignSelf="end"
+                margin={{ right: 'xsmall' }}
+              />
+              <Button
+                label="Log Out"
+                primary
+                hoverIndicator
+                onClick={() => {
+                  localStorage.removeItem('games');
+                  setGamesState({
+                    games: [],
+                  });
+                }}
+              />
+            </Box>
+          ) : (
+            <Button label="Log In" primary hoverIndicator onClick={login} />
+          )}
         </AppBar>
         <Switch>
           <Route exact path="/">
@@ -171,15 +138,3 @@ export default App;
 // #606368 - light gray - drop shadow
 //#3C4042 - dark gray
 //#A0A4A9 - off white - text
-
-/*<Box
-  flex
-  align="center"
-  direction="row"
-  justify="center"
-  background="background"
-  >
-  <MyCard />
-  <MyCard />
-  <MyCard />
-</Box>  */

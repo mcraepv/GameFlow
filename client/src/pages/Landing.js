@@ -10,6 +10,7 @@ const Landing = ({ login }) => {
       direction="column"
       justify="center"
       background="background"
+      animation={['fadeIn', 'zoomIn']}
     >
       <Heading
         level="1"
