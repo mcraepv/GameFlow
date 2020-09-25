@@ -27,8 +27,18 @@ const Quiz = ({ updateTags }) => {
 
   useEffect(() => {
     if (answeredState.isIteration && !answeredState.playersSelected)
-      stageQuiz();
+      // stageQuiz();
+      setUIState({
+        question: '',
+        options: [],
+      });
   }, [answeredState]);
+
+  useEffect(() => {
+    if (!uiState.options.length) {
+      stageQuiz();
+    }
+  }, [uiState]);
 
   useEffect(() => {
     if (answeredState.playersSelected) {
@@ -172,11 +182,11 @@ const Quiz = ({ updateTags }) => {
 
       //fixes bug that only happens sometimes. maybe one day we'll discover why
       //============================================================================
-      if (!firstGenreOptionIndex) {
+      if (firstGenreOptionIndex === -1) {
         firstGenreOptionIndex = getRandomIndex(-1, optionKeys.length);
       }
 
-      if (!secondGenreOptionIndex) {
+      if (secondGenreOptionIndex === -1) {
         firstGenreOptionIndex = getRandomIndex(
           firstGenreOptionIndex,
           optionKeys.length
