@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Card,
   Button,
@@ -9,11 +9,9 @@ import {
   Image,
   Heading,
 } from 'grommet';
-import { Favorite } from 'grommet-icons';
+import { Favorite, SubtractCircle } from 'grommet-icons';
 
 const MyCard = (props) => {
-  const [hoverState, setHoverState] = useState(false);
-
   const imageStyle = {
     height: '160px',
   };
@@ -57,7 +55,7 @@ const MyCard = (props) => {
             {props.btnText}
           </Button>
         </Box>
-      ) : (
+      ) : !props.isFavorite ? (
         <Box pad="small">
           <Button
             hoverIndicator
@@ -66,6 +64,17 @@ const MyCard = (props) => {
             }}
             alignSelf="center"
             icon={<Favorite color="lightPurp" />}
+          />
+        </Box>
+      ) : (
+        <Box pad="small">
+          <Button
+            hoverIndicator
+            onClick={() => {
+              props.clickHandler(props.text);
+            }}
+            alignSelf="center"
+            icon={<SubtractCircle color="lightPurp" />}
           />
         </Box>
       )}

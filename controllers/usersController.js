@@ -1,4 +1,3 @@
-const { json } = require('express');
 const db = require('../models');
 const API = require('../utils/API');
 const gamesController = require('./gamesController');
@@ -31,7 +30,13 @@ module.exports = {
         for (let i = 0; i < user.appIDs.length; i++) {
           const appID = user.appIDs[i];
           const game = await gamesController.create(appID);
-          games.push(game);
+          if (game) {
+            const gameObj = {
+              ...game._doc,
+              isFavorite: user.favorites.includes(game.title) ? true : false,
+            };
+            games.push(gameObj);
+          } else continue;
         }
         return games;
       };
@@ -58,6 +63,74 @@ module.exports = {
       res.json(user);
     } catch (err) {
       console.log(err);
+    }
+  },
+  addToFavorites: async (req, res) => {
+    try {
+      const userFavs = await db.User.findOne(
+        { steamID: req.body.steamID },
+        'favorites'
+      );
+
+      let doesExist = false;
+
+      userFavs.favorites.forEach((fav) => {
+        if (fav === req.body.title) {
+          doesExist = true;
+        }
+      });
+
+      let user;
+
+      if (!doesExist) {
+        user = await db.User.findOneAndUpdate(
+          { steamID: req.body.steamID },
+          { $push: { favorites: req.body.title } }
+        );
+      }
+      if (user) {
+        res.status(201).end();
+      } else if (userFavs && doesExist) {
+        res.status(200).end();
+      } else res.status(500).end();
+    } catch (err) {
+      throw err;
+    }
+  },
+
+  getFavorites: async (req, res) => {
+    const userFavs = await db.User.findOne(
+      { steamID: req.params.steamID },
+      'favorites'
+    );
+
+    const getFavorites = async (favorites) => {
+      const favoritesArr = [];
+
+      for (let i = 0; i < favorites.length; i++) {
+        const title = favorites[i];
+        const favObj = await gamesController.getFavorite(title);
+        favoritesArr.push(favObj);
+      }
+
+      return favoritesArr;
+    };
+
+    const favoritesArr = await getFavorites(userFavs.favorites);
+
+    res.status(200).json(favoritesArr);
+  },
+
+  deleteFromFavorites: async (req, res) => {
+    try {
+      const user = await db.User.findOneAndUpdate(
+        { steamID: req.body.steamID },
+        { $pull: { favorites: req.body.title } },
+        { new: true }
+      );
+      res.status(200).end();
+    } catch (err) {
+      throw err;
     }
   },
 };

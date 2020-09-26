@@ -1,10 +1,18 @@
 import axios from 'axios';
 
 export default {
-  login: () => {
-    return axios.get('/auth/steam');
+  addToFavorites: (title, steamID) => {
+    return axios.post('/api/favorites', { title: title, steamID: steamID });
   },
-  getQuiz: () => {
-    return axios.get('/api/quiz');
+
+  getFavorites: (steamID) => {
+    return axios.get(`/api/favorites/${steamID}`);
+  },
+
+  deleteFromFavorites: (title, steamID) => {
+    return axios.put('/api/favorites', {
+      title: title,
+      steamID: steamID,
+    });
   },
 };

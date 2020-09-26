@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Heading, Box } from 'grommet';
 import quiz from '../utils/quiz.json';
 import MyCard from '../components/MyCard';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 const Quiz = ({ updateTags }) => {
   const [quizState, setQuizState] = useState(quiz);
@@ -170,7 +169,6 @@ const Quiz = ({ updateTags }) => {
           firstGenreOptionIndex,
           optionKeys.length
         );
-        console.log('= 2', firstGenreOptionIndex, secondGenreOptionIndex);
       } else if (answeredState.genreQuestionsAnswered === 3) {
         firstGenreOptionIndex = optionKeys.indexOf(
           genresSelectedArr[genresSelectedArr.length - 2]
@@ -182,12 +180,21 @@ const Quiz = ({ updateTags }) => {
 
       //fixes bug that only happens sometimes. maybe one day we'll discover why
       //============================================================================
-      if (firstGenreOptionIndex === -1) {
-        firstGenreOptionIndex = getRandomIndex(-1, optionKeys.length);
+      if (
+        (!firstGenreOptionIndex && firstGenreOptionIndex !== 0) ||
+        firstGenreOptionIndex === -1
+      ) {
+        firstGenreOptionIndex = getRandomIndex(
+          secondGenreOptionIndex,
+          optionKeys.length
+        );
       }
 
-      if (secondGenreOptionIndex === -1) {
-        firstGenreOptionIndex = getRandomIndex(
+      if (
+        (!secondGenreOptionIndex && secondGenreOptionIndex !== 0) ||
+        secondGenreOptionIndex === -1
+      ) {
+        secondGenreOptionIndex = getRandomIndex(
           firstGenreOptionIndex,
           optionKeys.length
         );
@@ -196,6 +203,8 @@ const Quiz = ({ updateTags }) => {
 
       const firstGenreOption = quizStage[optionKeys[firstGenreOptionIndex]];
       const secondGenreOption = quizStage[optionKeys[secondGenreOptionIndex]];
+      // console.log('first: ', firstGenreOptionIndex, firstGenreOption);
+      // console.log('second: ', secondGenreOptionIndex, secondGenreOption);
 
       const firstOptionText =
         firstGenreOption.options[
