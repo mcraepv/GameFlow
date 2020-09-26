@@ -6,7 +6,7 @@ export default {
   },
 
   getFavorites: (steamID) => {
-    return axios.get(`/api/favorites/${steamID}`);
+    return axios.post(`/api/favorites/${steamID}`);
   },
 
   deleteFromFavorites: (title, steamID) => {
