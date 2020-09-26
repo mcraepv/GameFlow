@@ -1,106 +1,67 @@
 import React, { useEffect, useState } from 'react';
 import './utils/API';
-import { Grommet, Button, Heading } from 'grommet';
-import { Notification } from 'grommet-icons';
+import { Grommet, Button, Heading, Anchor, Box } from 'grommet';
 import AppBar from './components/AppBar';
 import Landing from './pages/Landing';
 import Quiz from './pages/Quiz';
 import Recommendation from './pages/Recommendation';
-import {
-  Redirect,
-  BrowserRouter as Router,
-  Route,
-  Switch,
-} from 'react-router-dom';
-
-const theme = {
-  global: {
-    active: {
-      background: {
-        color: '#202124',
-      },
-    },
-    colors: {
-      darkPurp: '#B64FC8',
-      lightPurp: '#FFB2FF',
-      background: '#202124',
-      card: '#3C4042',
-      primary: '#0e0f10',
-      lightGray: '#A0A4A9',
-      focus: '#FFB2FF',
-    },
-    font: {
-      family: 'Ubuntu',
-      size: '18px',
-      height: '20px',
-    },
-    image: {
-      extend: {
-        borderRadius: '25px',
-      },
-    },
-  },
-  button: {
-    default: {
-      background: {
-        color: '#202124',
-      },
-      border: {
-        color: '#FFB2FF',
-      },
-    },
-    primary: {
-      color: '#202124',
-      font: {
-        weight: 'bold',
-      },
-      background: {
-        color: '#FFB2FF',
-      },
-      border: {
-        color: '#0e0f10',
-      },
-      hover: {
-        background: {
-          color: '#B64FC8',
-        },
-      },
-    },
-    background: {
-      color: '#202124',
-    },
-    border: {
-      color: '#FFB2FF',
-    },
-  },
-};
+import Favorites from './pages/Favorites';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import theme from './utils/theme';
+import API from './utils/API';
+import { useHistory } from 'react-router-dom';
 
 function App() {
   const [gamesState, setGamesState] = useState({
     games: [],
+    steamID: '',
   });
   const [tagsArrState, setTagsArrState] = useState([]);
 
   useEffect(() => {
+    const games = localStorage.getItem('games');
+    const user = localStorage.getItem('steamID');
+    if (games && user) {
+      setGamesState({
+        games: JSON.parse(games),
+        steamID: user,
+      });
+    }
     window.addEventListener('message', (event) => {
       if (!event.data.gamesRes) {
         return;
       }
-      const { games, ok } = event.data;
+      const { games, ok, steamID } = event.data;
       if (ok) {
-        console.log(ok);
-        setGamesState({
-          games: JSON.parse(games),
-        });
+        handleLocalStorageReset(JSON.parse(games), steamID);
       }
     });
-  });
+  }, []);
+
+  const handleLocalStorageReset = (games, steamID) => {
+    setGamesState({
+      games: games,
+      steamID: steamID,
+    });
+    localStorage.setItem('games', JSON.stringify(games));
+    localStorage.setItem('steamID', steamID);
+  };
+
   const login = () => {
     const path = process.env.REACT_APP_API_URL
       ? `${process.env.REACT_APP_API_URL}/auth/steam`
       : '/auth/steam';
     const popupWindow = window.open(path, '_blank', 'width=800, height=600');
     if (window.focus) popupWindow.focus();
+  };
+
+  const logout = () => {
+    localStorage.removeItem('games');
+    localStorage.removeItem('steamID');
+    setGamesState({
+      games: [],
+      steamID: '',
+    });
   };
 
   const updateTags = (tagsArr) => {
@@ -111,54 +72,128 @@ function App() {
     setTagsArrState([]);
   };
 
-  const addToFavorites = (title) => {
-    console.log(`${title} was added to favorites!`);
+  const history = useHistory();
+  const handleFavsRoute = () => {
+    history.push('/favorites');
+  };
+
+  const handleGamesStateResetAfterFavoritesRouteBecauseReactWontDoItForMe = async () => {
+    //look at how gross this is
+    const games = localStorage.getItem('games');
+    //this is your fault react
+    const user = localStorage.getItem('steamID');
+    //I'm doing this because of you
+    if (games && user) {
+      //look at it
+      setGamesState({
+        //its disgusting
+        games: JSON.parse(games),
+        //this shouldn't be happening
+        steamID: user,
+        //but it is
+      });
+    }
+    return gamesState.games.length ? true : false;
+  };
+  const addToFavorites = async (title) => {
+    const res = await API.addToFavorites(title, gamesState.steamID);
+    if (res.status === 200 || res.status === 201) {
+      const games = [...gamesState.games];
+      games.forEach((game) => {
+        if (game.title === title) {
+          game.isFavorite = true;
+        }
+      });
+      handleLocalStorageReset(games, gamesState.steamID);
+      return true;
+    } else return false;
+  };
+
+  const getFavorites = async (steamID) => {
+    const favorites = await API.getFavorites(steamID);
+    return favorites;
+  };
+
+  const deleteFromFavorites = async (title) => {
+    const res = await API.deleteFromFavorites(title, gamesState.steamID);
+    if (res.status === 200) {
+      const games = [...gamesState.games];
+      games.forEach((game) => {
+        if (game.title === title) {
+          game.isFavorite = true;
+        }
+      });
+      handleLocalStorageReset(games, gamesState.steamID);
+      return true;
+    } else return false;
   };
 
   return (
-    <Router>
-      <Grommet theme={theme} full>
-        <AppBar margin={{ bottom: 'large' }}>
+    <Grommet theme={theme} full>
+      <AppBar margin={{ bottom: 'large' }}>
+        <Anchor href="/">
           <Heading level="3" margin="none" color="lightPurp">
             GameFlow
           </Heading>
-          <Button
-            icon={<Notification color="lightPurp" />}
-            onClick={() => {}}
+        </Anchor>
+        {gamesState.games.length ? (
+          <Box direction="row">
+            <Button
+              label="Favorites"
+              hoverIndicator
+              alignSelf="end"
+              margin={{ right: 'xsmall' }}
+              // href="/favorites"
+              onClick={handleFavsRoute}
+            />
+            <Button label="Log Out" primary hoverIndicator onClick={logout} />
+          </Box>
+        ) : (
+          <Button label="Log In" primary hoverIndicator onClick={login} />
+        )}
+      </AppBar>
+      <Switch>
+        <Route exact path="/">
+          {gamesState.games.length && !tagsArrState.length ? (
+            <Redirect to="/quiz" />
+          ) : (
+            <Landing login={login} />
+          )}
+        </Route>
+        <Route exact path="/quiz">
+          {tagsArrState.length ? (
+            <Redirect to="/recommendation" />
+          ) : gamesState.games.length ? (
+            <Quiz updateTags={updateTags} />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route exact path="/recommendation">
+          {tagsArrState.length ? (
+            <Recommendation
+              resetQuiz={resetQuiz}
+              tagsArr={tagsArrState}
+              games={gamesState.games}
+              addToFavorites={addToFavorites}
+              deleteFromFavorites={deleteFromFavorites}
+            />
+          ) : (
+            <Redirect to="/" />
+          )}
+        </Route>
+        <Route exact path="/favorites">
+          <Favorites
+            getFavorites={getFavorites}
+            deleteFromFavorites={deleteFromFavorites}
+            steamID={gamesState}
+            handleTrash={
+              handleGamesStateResetAfterFavoritesRouteBecauseReactWontDoItForMe
+            }
           />
-        </AppBar>
-        <Switch>
-          <Route exact path="/">
-            {gamesState.games.length && !tagsArrState.length ? (
-              <Redirect to="/quiz" />
-            ) : (
-              <Landing login={login} />
-            )}
-          </Route>
-          <Route exact path="/quiz">
-            {tagsArrState.length ? (
-              <Redirect to="/recommendation" />
-            ) : gamesState.games.length ? (
-              <Quiz updateTags={updateTags} />
-            ) : (
-              <Redirect to="/" />
-            )}
-          </Route>
-          <Route exact path="/recommendation">
-            {tagsArrState.length ? (
-              <Recommendation
-                resetQuiz={resetQuiz}
-                tagsArr={tagsArrState}
-                games={gamesState.games}
-                addToFavorites={addToFavorites}
-              />
-            ) : (
-              <Redirect to="/" />
-            )}
-          </Route>
-        </Switch>
-      </Grommet>
-    </Router>
+        </Route>
+      </Switch>
+    </Grommet>
   );
 }
 
@@ -172,15 +207,3 @@ export default App;
 // #606368 - light gray - drop shadow
 //#3C4042 - dark gray
 //#A0A4A9 - off white - text
-
-/*<Box
-  flex
-  align="center"
-  direction="row"
-  justify="center"
-  background="background"
-  >
-  <MyCard />
-  <MyCard />
-  <MyCard />
-</Box>  */

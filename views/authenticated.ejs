@@ -10,7 +10,8 @@
     <script>
       window.opener.postMessage(
         {
-          games: `<%-JSON.stringify(games)%>`,
+          games: `<%-JSON.stringify(user.games)%>`,
+          steamID: `<%-user.steamID%>`,
           ok: true,
           gamesRes: true,
         },

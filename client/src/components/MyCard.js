@@ -9,7 +9,7 @@ import {
   Image,
   Heading,
 } from 'grommet';
-import { Favorite } from 'grommet-icons';
+import { Favorite, SubtractCircle } from 'grommet-icons';
 
 const MyCard = (props) => {
   const imageStyle = {
@@ -23,6 +23,8 @@ const MyCard = (props) => {
       width={{ min: '200px', max: '250px' }}
       background="card"
       margin="small"
+      className="card"
+      animation={['fadeIn', 'zoomIn']}
     >
       <CardHeader>
         <Image fill={true} src={props.image} fit="cover" style={imageStyle} />
@@ -43,13 +45,26 @@ const MyCard = (props) => {
           <Button
             hoverIndicator
             onClick={() => {
-              props.clickHandler(props.tag);
+              props.tested
+                ? props.clickHandler(props.tag, props.tested)
+                : props.clickHandler(props.tag);
             }}
             alignSelf="center"
             primary
           >
             {props.btnText}
           </Button>
+        </Box>
+      ) : !props.isFavorite ? (
+        <Box pad="small">
+          <Button
+            hoverIndicator
+            onClick={() => {
+              props.clickHandler(props.text);
+            }}
+            alignSelf="center"
+            icon={<Favorite color="lightPurp" />}
+          />
         </Box>
       ) : (
         <Box pad="small">
@@ -59,7 +74,7 @@ const MyCard = (props) => {
               props.clickHandler(props.text);
             }}
             alignSelf="center"
-            icon={<Favorite color="lightPurp" />}
+            icon={<SubtractCircle color="lightPurp" />}
           />
         </Box>
       )}

@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Button, Heading, Box } from 'grommet';
 import MyCard from '../components/MyCard';
 
-const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
+const Recommendation = ({
+  resetQuiz,
+  tagsArr,
+  games,
+  addToFavorites,
+  deleteFromFavorites,
+}) => {
   const [matchedGamesState, setMatchedGamesState] = useState([]);
   const [uiState, setUIState] = useState({
     gameCards: [],
@@ -13,7 +19,9 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
   }, []);
 
   useEffect(() => {
-    if (matchedGamesState.length) loadRecommendations(tagsArr);
+    if (matchedGamesState.length) {
+      loadRecommendations(tagsArr);
+    }
   }, [matchedGamesState]);
 
   const getRecommendations = (tagsArr, games) => {
@@ -24,6 +32,7 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
         title: game.title,
         imgURL: game.imgURL,
         matches: 0,
+        isFavorite: game.isFavorite,
       };
       game.genres.forEach(
         (genre) =>
@@ -38,6 +47,32 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
     setMatchedGamesState(matches);
   };
 
+  const handleAddToFavorites = async (title) => {
+    const resIsOk = await addToFavorites(title);
+    if (resIsOk) {
+      const matches = [...matchedGamesState];
+      matches.forEach((game) => {
+        if (game.title === title) {
+          game.isFavorite = true;
+        }
+      });
+      setMatchedGamesState([...matches]);
+    }
+  };
+
+  const handleDeleteFromFavorites = async (title) => {
+    const resIsOk = await deleteFromFavorites(title);
+    if (resIsOk) {
+      const matches = [...matchedGamesState];
+      matches.forEach((game) => {
+        if (game.title === title) {
+          game.isFavorite = false;
+        }
+      });
+      setMatchedGamesState([...matches]);
+    }
+  };
+
   const loadRecommendations = (tagsArr) => {
     const gameCards = [];
 
@@ -48,8 +83,11 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
         if (game.matches === desiredMatches) {
           const cardProps = {
             text: game.title,
-            clickHandler: addToFavorites,
+            clickHandler: game.isFavorite
+              ? handleDeleteFromFavorites
+              : handleAddToFavorites,
             image: game.imgURL,
+            isFavorite: game.isFavorite,
           };
           gameCards.push(<MyCard {...cardProps} key={cardProps.text} />);
         }
@@ -66,7 +104,7 @@ const Recommendation = ({ resetQuiz, tagsArr, games, addToFavorites }) => {
       direction="column"
       justify="center"
       background="background"
-      pad="xlarge"
+      pad="large"
     >
       <Heading level="3" margin="none" color="lightPurp" textAlign="center">
         Based on your quiz results, these games might be a good fit!
