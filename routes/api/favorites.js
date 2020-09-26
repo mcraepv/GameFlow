@@ -11,6 +11,7 @@ router
   });
 
 router.route('/:steamID').get((req, res) => {
+  console.log('get favorites route called');
   usersController.getFavorites(req, res);
 });
 router.route;

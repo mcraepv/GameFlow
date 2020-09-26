@@ -99,6 +99,7 @@ module.exports = {
   },
 
   getFavorites: async (req, res) => {
+    console.log('get favorites controller called');
     const userFavs = await db.User.findOne(
       { steamID: req.params.steamID },
       'favorites'
