@@ -24,6 +24,7 @@ const Favorites = ({ getFavorites, deleteFromFavorites, handleTrash }) => {
       const res = await getFavorites(steamID);
       const favorites = res.data;
       console.log(favorites);
+      console.log(res);
       if (favorites.length) {
         const favoriteEls = [];
         favorites.forEach((fav) => {

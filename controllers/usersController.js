@@ -117,6 +117,7 @@ module.exports = {
     };
 
     const favoritesArr = await getFavorites(userFavs.favorites);
+    console.log(favoritesArr);
 
     res.status(200).json(favoritesArr);
   },
