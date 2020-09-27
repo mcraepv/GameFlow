@@ -13,7 +13,6 @@ router
 //I think my server file is sending my static html file on the app.get('*') route.
 //that's why there's a post for a get route
 router.route('/:steamID').post((req, res) => {
-  console.log('get favorites route called');
   usersController.getFavorites(req, res);
 });
 router.route;

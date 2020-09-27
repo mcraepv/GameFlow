@@ -143,7 +143,6 @@ function App() {
               hoverIndicator
               alignSelf="end"
               margin={{ right: 'xsmall' }}
-              // href="/favorites"
               onClick={handleFavsRoute}
             />
             <Button label="Log Out" primary hoverIndicator onClick={logout} />
