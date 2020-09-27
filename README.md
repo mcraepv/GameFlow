@@ -2,8 +2,8 @@
 
 GameFlow solves the choice paralysis problem many gamers encounter when trying
 to decide what to play next. Users can simply log into their Steam accounts and
-take a short quiz, and GameFlow gives them a suggestion and saves their results.
-Users can also save favorites.
+take a short quiz, and GameFlow gives them a suggestion. Users can also save favorite 
+games for future use.
 http://secret-wildwood-10554.herokuapp.com/
 
 ## Table of Contents
