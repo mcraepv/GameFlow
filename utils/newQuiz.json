@@ -1,0 +1,281 @@
+{
+  "genreQ": {
+    "question": "Pick the scenario that sounds like the most fun to you.",
+    "rpg": {
+      "options": [
+        "Meticulously gearing out your character to take on that difficult dungeon.",
+        "Creating a custom character to play as you explore a deeply fleshed out game world.",
+        "Rolling the perfect stats to play as your favorite class.",
+        "Making choices throughout the game's story that affect the outcome of the ending.",
+        "Managing a party of companions to perfectly complement your playstyle."
+      ],
+      "key": "rpg",
+      "drillDowns": {
+        "question": "So you like role playing, eh? Well, pick the type of role playing that most suits you.",
+        "crpg": {
+          "options": [
+            "Top-down isometric battles with a party I created myself.",
+            "Basically DnD, but on a computer.",
+            "Near-limitless variety of party composition."
+          ],
+          "key": "crpg"
+        },
+        "action rpg": {
+          "options": [
+            "Loot, loot and more loot!",
+            "Skill trees and endless customization.",
+            "Hack n slash n hack n slash...."
+          ],
+          "key": "action rpg"
+        },
+        "jrpg": {
+          "options": [
+            "Anime, but in a role-playing game.",
+            "Story-driven with a distinctly Japanese art style.",
+            "NANI?!?"
+          ],
+          "key": "jrpg"
+        },
+        "roguelike": {
+          "options": [
+            "Trying to get as far as possible before dying and having to start over.",
+            "Slowly making progress which can increase the success rate of future runs.",
+            "Quick gameplay that's easy to come back to after a break."
+          ],
+          "key": "roguelike"
+        },
+        "dungeon crawler": {
+          "options": [
+            "Fighting my way through a deep, dark dungeon, only to return to town to get supplies.",
+            "Each dungeon run is a little different, and a little harder.",
+            "Traps, puzzles and permadeath!"
+          ],
+          "key": "dungeon crawler"
+        }
+      }
+    },
+    "strategy": {
+      "options": [
+        "Directing the resources of a nation to achieve dominance over the map.",
+        "Carefully planning troop placement to pinch an enemy army.",
+        "Ensuring victory through political and diplomatic means.",
+        "Building and fielding the perfect army to take on a bigger opponent.",
+        "Expanding your borders until none can oppose you."
+      ],
+      "key": "strategy",
+      "drillDowns": {
+        "question": "More of the strategic type, huh? Well, what kind of strategy do you prefer?",
+        "4x": {
+          "options": [
+            "eXploration, eXpansion, eXploitation and eXtermination!",
+            "Optimizing my tech tree so that I can gain the advantage over my opponent.",
+            "Grabbing the best resources early on to block my enemies from using them."
+          ],
+          "key": "4x"
+        },
+        "moba": {
+          "options": [
+            "Ok, so there's three lanes, and everyone controls a 'champion, or a legend...",
+            "Picking my favorite character to shore up the team's comp.",
+            "Fighting wave after wave of minions to keep my team's base safe."
+          ],
+          "key": "moba"
+        },
+        "rts": {
+          "options": [
+            "Getting the resources necessary to take out my opponent in real time.",
+            "Managing complex army compositions to beat my enemies.",
+            "It's all about actions per minute!"
+          ],
+          "key": "rts"
+        },
+        "tactical": {
+          "options": [
+            "Planning squad movements to set up ambushes on enemies.",
+            "Picking the best skills and weapons for a particular mission.",
+            "Small scale squad battles that require precise unit placement."
+          ],
+          "key": "tactical"
+        },
+        "grand strategy": {
+          "options": [
+            "I like to strategize on a large scale. Give me a nation to control.",
+            "Political as well as military strategy is what ultimately wins conflicts.",
+            "World dominance through politically advantageous marriage."
+          ],
+          "key": "grand strategy"
+        }
+      }
+    },
+    "action": {
+      "options": [
+        "Hitting headshot after headshot to bolster your K/D spread.",
+        "Mastering the hardest combos to outplay an opponent.",
+        "Making precise jumps to beat a level in the shortest amount of time.",
+        "Sneaking around enemies, taking out only those who get in your way.",
+        "Hiding- or running- from things that go bump in the night."
+      ],
+      "key": "action",
+      "drillDowns": {
+        "question": "An action junkie, are you? Alright, what kind of action do you prefer?",
+        "platformer": {
+          "options": [
+            "Precise movement and jumps to make it to the end of the level.",
+            "Powerups that give me special abilities like fireballs or super jump.",
+            "Wall jumps, ground pounds and falling into endless pits."
+          ],
+          "key": "platformer"
+        },
+        "shooter": {
+          "options": [
+            "Clicking heads and taking names.",
+            "360 no scopes are peak performance.",
+            "Running through a level mowing down enemies with my favorite weapon."
+          ],
+          "key": "shooter"
+        },
+        "fighting": {
+          "options": [
+            "Hitting combos at exactly the right time to counter my opponent's attack.",
+            "BUTTON MASHING",
+            "Brutal finishers and a wealth of characters to play."
+          ],
+          "key": "fighting"
+      },
+      "survival horror": {
+            "options": [
+              "Carefully managing resources to escape with your life.",
+              "Running, hiding and surviving a horrific enemy.",
+              "Being scared out of your mind pretty much the entire game."
+            ],
+            "key": "survival horror"
+          },
+      "stealth": {
+        "options": [
+          "The best way to beat an enemy is to sneak around them.",
+          "Staying out of sight so I can line up the perfect shot.",
+          "Avoiding enemy lines of sight to make it to the end of a stage."
+        ],
+        "key": "stealth"
+      }
+    }
+  },
+    "simulation": {
+      "options": [
+        "Managing resources to maximize the growth of your city.",
+        "Taking to the skies with an airplane that flies like the real thing.",
+        "Picking out the best outfit and furniture for your character.",
+        "Scoring a goal at the last second to bring home the win.",
+        "Crossing the finish line right before your opponents."
+      ],
+      "key": "simulation",
+      "drillDowns": {
+        "question": "Hmmm, you like simulators, do you? Which simulation appeals most to you?",
+        "sports": {
+          "options": [
+            "Playing as my favorite team to crush its biggest rival.",
+            "Scoring a PK with 10 seconds left.",
+            "Managing my roster to field the best players available."
+          ],
+          "key": "sports"
+        },
+        "management": {
+          "options": [
+            "Managing a business to maximize its growth potential.",
+            "Making sure my population has all the resources it needs to survive.",
+            "Building a really big roller coaster which may or may not kill the people who ride it."
+          ],
+          "key": "management"
+        },
+        "racing": {
+          "options": [
+            "Building and customizing awesome supercars to race against challengers.",
+            "Memorizing routes to make it to the finish line first.",
+            "Realistic vehicle handling so it feels like I'm actually diring my favorite cars."
+          ],
+          "key": "racing"
+        },
+        "flight": {
+          "options": [
+            "Realistic flight physics, right down to windshear and rainfall.",
+            "Building an awesome spaceship to fly around the cosmos.",
+            "Getting into dogfights in my favorite fighter jet."
+          ],
+          "key": "flight"
+        },
+        "lifeSim": {
+          "options": [
+            "Managing relationships between my character and their friends and love interests.",
+            "Virtual PUPPIES",
+            "Slowing upgrading my town by making money and improving relationships."
+          ],
+          "key": "life sim"
+        }
+      }
+    },
+    "adventure": {
+      "options": [
+        "Managing constantly depleting hunger, thirst and sleep bars to survive until I can escape.",
+        "Fighting bosses to collect items which allow me to access new parts of the map.",
+        "Exploring an area to find a hidden clue.",
+        "Solving puzzles to escape an area.",
+        "Experiencing a narratively-driven world through the lense of a video game."
+      ],
+      "key": "adventure",
+      "drillDowns": {
+        "question": "Ahh the adventuring type... Let's see what kind of adventure sounds best to you.",
+        "puzzle": {
+          "options": [
+            "Solving increasingly difficult puzzles that require intense though and wiki reading.",
+            "Seriously, sometimes there's no other option but to look at the wiki to solve some puzzles.",
+            "I don't believe anyone who says they've beaten Myst without looking at the wiki."
+          ],
+          "key": "puzzle"
+        },
+        "survival": {
+          "options": [
+            "Running from aggressive wildlife back to your camp to wait out another cold night.",
+            "Searching for food in the wilderness so you can survive another day.",
+            "Crafting the tools necessary to make it to the end of another day."
+          ],
+          "key": "survival"
+        },
+        "metroidvania": {
+          "options": [
+            "Exploration of a highly detailed and interconnected game map.",
+            "Backtracking, backtracking and more backtracking",
+            "Non-linear game progression with a high emphasis on upgrading equipment"
+          ],
+          "key": "metroidvania"
+        },
+        "walking simulator": {
+          "options": [
+            "Walking is an adventure, right?",
+            "story-rich adventures that involve a lot of walking.",
+            "It's not all about walking. But there's definitely a lot of walking."
+          ],
+          "key": "walking simulator"
+        },
+        "point & click": {
+          "options": [
+            "Pointing and clicking and pointing and clicking and pointing...",
+            "Solving a puzzle my exploring a static on-screen environment",
+            "Collecting items and using clues to determine the best time to use those items."
+          ],
+          "key": "point & click"
+      },
+    },
+  },
+
+
+
+
+   // "cyberpunk": {},
+      // "medieval": {},
+      // "dark fantasy": {},
+      // "space": {},
+      // "funny": {},
+      // "atmospheric": {},
+      // "story rich": {}
+}
+

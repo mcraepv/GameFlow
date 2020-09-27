@@ -3,8 +3,9 @@ const Schema = mongoose.Schema;
 
 const UserSchema = new Schema(
   {
-    steamID: { type: Number, required: true },
+    steamID: { type: Number, required: true, unique: true },
     appIDs: [{ type: Number, required: true }],
+    favorites: [{ type: String }],
     quizzes: [
       {
         type: Schema.Types.ObjectId,

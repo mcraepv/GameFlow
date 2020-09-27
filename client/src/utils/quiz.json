@@ -1,170 +1,428 @@
 {
   "genreQ": {
-    "question": "Let's start with broad strokes. Pick the scenario that sounds most fun to you.",
-    "options": {
-      "rpg": {
-        "option": "Staring at a character creation menu for 45 minutes until you give up and go with the default, then rolling another stealth archer.",
-        "image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
-        "key": "rpg",
-        "drillDowns": {
-          "question": "So you like role playing, eh? Well, what type of role playing sounds best to you?",
-          "options": {
-            "tacticalRPG": {
-              "option": "I like overlooking a battlefield and controlling a squad of hitters, each doing what they do best.",
-              "image": "https://media.rawg.io/media/games/530/53081dbd5003f990fa5312404ac3d71a.jpg",
-              "key": "crpg"
-            },
-            "actionRPG": {
-              "option": "I like to click, and loot. Click to attack, click to loot. Maybe press an ability button here or there, but you get the idea.",
-              "image": "https://media.rawg.io/media/games/923/923a5dd13b6e79dd23ab2d09934f0e8d.jpg",
-              "key": "action rpg"
-            },
-            "jRPGS": {
-              "option": "I like anime, but in video games.",
-              "image": "https://media.rawg.io/media/games/ae4/ae404f4e0f504131199703c09111bb78.jpg",
-              "key": "jrpg"
-            },
-            "roguelikes": {
-              "option": "I like to die. A lot. I like getting super attached to a character, only to watch them die. Over and over again.",
-              "image": "https://media.rawg.io/media/games/fd9/fd92f105dcd6491bc5d61135033d1f19.jpg",
-              "key": "roguelike"
-            },
-            "openworldRPG": {
-              "option": "I like setting out, exploring an endless landscape and living my life how I want t- Wait, you're telling me I'm the chosen one?",
-              "image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
-              "key": "open world"
-            }
-          }
+    "question": "Pick the scenario that sounds like the most fun to you.",
+    "rpg": {
+      "options": [
+        "Meticulously gearing out your character to take on that difficult dungeon.",
+        "Creating a custom character to play as you explore a deeply fleshed out game world.",
+        "Rolling the perfect stats to play as your favorite class.",
+        "Making choices throughout the game's story that affect the outcome of the ending.",
+        "Managing a party of companions to perfectly complement your playstyle."
+      ],
+      "images": [
+        "https://media.rawg.io/media/games/566/566f53f43aa1bd28c63cf3a4d21440ee.jpg",
+        "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+        "https://media.rawg.io/media/games/424/424facd40f4eb1f2794fe4b4bb28a277.jpg",
+        "https://media.rawg.io/media/games/923/923a5dd13b6e79dd23ab2d09934f0e8d.jpg",
+        "https://media.rawg.io/media/games/315/3156817d3ac1f341da73de6495fb28f5.jpg"
+      ],
+      "key": "rpg",
+      "drillDowns": {
+        "question": "So you like role playing, eh? Well, pick the type of role playing that most suits you.",
+        "crpg": {
+          "options": [
+            "Top-down isometric battles with a party I created myself.",
+            "Basically DnD, but on a computer.",
+            "Near-limitless variety of party composition."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/789/7896837ec22a83e4007018ddd55e8c9a.jpg",
+            "https://media.rawg.io/media/games/840/8408ad3811289a6a5830cae60fb0b62a.jpg",
+            "https://media.rawg.io/media/games/d9d/d9d6c3327fea9e830b17985f72db64e6.jpg"
+          ],
+          "key": "crpg"
+        },
+        "action rpg": {
+          "options": [
+            "Loot, loot and more loot!",
+            "Skill trees and endless customization.",
+            "Hack n slash n hack n slash...."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/b17/b175178f8842276b8b18b339fe3146a1.jpg",
+            "https://media.rawg.io/media/games/d0f/d0f91fe1d92332147e5db74e207cfc7a.jpg",
+            "https://media.rawg.io/media/games/a27/a275556fab1a6acaded4cedad0f9dc80.jpg"
+          ],
+          "key": "action rpg"
+        },
+        "jrpg": {
+          "options": [
+            "Anime, but in a role-playing game.",
+            "Story-driven with a distinctly Japanese art style.",
+            "NANI?!?"
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/d89/d89bd0cf4fcdc10820892980cbba0f49.jpg",
+            "https://media.rawg.io/media/games/b92/b924c4beeed6617201d5d91511cfcf8e.jpg",
+            "https://media.rawg.io/media/games/052/05237236b13f321e0fd9efa984a7d7a1.jpg"
+          ],
+          "key": "jrpg"
+        },
+        "roguelike": {
+          "options": [
+            "Trying to get as far as possible before dying and having to start over.",
+            "Slowly making progress which can increase the success rate of future runs.",
+            "Quick gameplay that's easy to come back to after a break."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/a84/a846f9856148eb2822d7b3974e3f7db5.jpg",
+            "https://media.rawg.io/media/games/5f4/5f4780690dbf04900cbac5f05b9305f3.jpg",
+            "https://media.rawg.io/media/games/f52/f5206d55f918edf8ee07803101106fa6.jpg"
+          ],
+          "key": "roguelike"
+        },
+        "dungeon crawler": {
+          "options": [
+            "Fighting my way through a deep, dark dungeon, only to return to town to get supplies.",
+            "Each dungeon run is a little different, and a little harder.",
+            "Traps, puzzles and permadeath!"
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/fd9/fd92f105dcd6491bc5d61135033d1f19.jpg",
+            "https://media.rawg.io/media/games/cef/cefedf18016cbab466861eb698daf988.jpg",
+            "https://media.rawg.io/media/games/135/13553828105bbb700a04e7517f12e34e.jpg"
+          ],
+          "key": "dungeon crawler"
         }
-      },
-      "strategy": {
-        "option": "Leading a squad, army or nation to victory over its enemies while ignoring the problematic nature of waging large scale wars for fun.",
-        "image": "https://media.rawg.io/media/games/997/997ab4d67e96fb20a4092383477d4463.jpg",
-        "key": "strategy",
-        "drillDowns": {
-          "question": "More of the tactical type, huh? Well, what kind of tactics do you prefer?",
-          "options": {
-            "4X": {
-              "option": "I like to eXplore a map, eXpand to dominate that map, eXploit the resources available and eXterminate everything that isn't me.",
-              "image": "https://media.rawg.io/media/screenshots/51d/51d23baa1ada62b67239a8eec4bca294.jpg",
-              "key": "4x"
-            },
-            "moba": {
-              "option": "Ok. So there's three lanes, and everyone controls what's called a 'champion', or 'legend'...",
-              "image": "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg",
-              "key": "moba"
-            },
-            "rts": {
-              "option": "No turns for me. I like facing off against an opponent, each of us controlling huge armies concurrently.",
-              "image": "https://media.rawg.io/media/games/960/9605c08bf8535c00adbb0a3896f0c484.jpg",
-              "key": "rts"
-            },
-            "tactical": {
-              "option": "I methodically plan strategies only to reload a 30-minute old autosave because my best unit just got HEADSHOT FROM ACROSS THE MAP",
-              "image": "https://media.rawg.io/media/games/238/2383a172b4d50a7b44e07980eb7141ea.jpg",
-              "key": "tactical"
-            },
-            "grandStrategy": {
-              "option": "I like pretending I'm the ruler of an entire nation, waging a war for dominance, survival...and sweet, sweet border expansion.",
-              "image": "https://media.rawg.io/media/games/92b/92bbf8a451e2742ab812a580546e593a.jpg",
-              "key": "grand strategy"
-            }
-          }
+      }
+    },
+    "strategy": {
+      "options": [
+        "Directing the resources of a nation to achieve dominance over the map.",
+        "Carefully planning troop placement to pinch an enemy army.",
+        "Ensuring victory through political and diplomatic means.",
+        "Building and fielding the perfect army to take on a bigger opponent.",
+        "Expanding your borders until none can oppose you."
+      ],
+      "images": [
+        "https://media.rawg.io/media/games/d2a/d2a4b12c173f9ffba1c384a0607a3aea.jpg",
+        "https://media.rawg.io/media/games/92b/92bbf8a451e2742ab812a580546e593a.jpg",
+        "https://media.rawg.io/media/games/800/800d07ca648a9778a8230f40088e0866.jpg",
+        "https://media.rawg.io/media/games/55e/55ee6432ac2bf224610fa17e4c652107.jpg",
+        "https://media.rawg.io/media/games/9bf/9bfac18ff678f41a4674250fa0e04a52.jpg"
+      ],
+      "key": "strategy",
+      "drillDowns": {
+        "question": "More of the strategic type, huh? Well, what kind of strategy do you prefer?",
+        "4x": {
+          "options": [
+            "eXploration, eXpansion, eXploitation and eXtermination!",
+            "Optimizing my tech tree so that I can gain the advantage over my opponent.",
+            "Grabbing the best resources early on to block my enemies from using them."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/997/997ab4d67e96fb20a4092383477d4463.jpg",
+            "https://media.rawg.io/media/games/3a9/3a9566438d476090bc19b29b03b77692.jpg",
+            "https://media.rawg.io/media/screenshots/595/595d320931fadf8775ffd5c7462a1a7c.jpg"
+          ],
+          "key": "4x"
+        },
+        "moba": {
+          "options": [
+            "Ok, so there's three lanes, and everyone controls a 'champion, or a legend...",
+            "Picking my favorite character to shore up the team's comp.",
+            "Fighting wave after wave of minions to keep my team's base safe."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/78b/78bc81e247fc7e77af700cbd632a9297.jpg",
+            "https://media.rawg.io/media/games/66e/66e90c9d7b9a17335b310ceb294e9365.jpg",
+            "https://media.rawg.io/media/screenshots/994/994af944846343d8f6eb4d23f4db62a4.jpg"
+          ],
+          "key": "moba"
+        },
+        "rts": {
+          "options": [
+            "Getting the resources necessary to take out my opponent in real time.",
+            "Managing complex army compositions to beat my enemies.",
+            "It's all about actions per minute!"
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/960/9605c08bf8535c00adbb0a3896f0c484.jpg",
+            "https://media.rawg.io/media/games/4e9/4e908c9270228430128105bcd88e51bc.jpg",
+            "https://media.rawg.io/media/screenshots/cb9/cb988f8c804a749536038594388d441c.jpg"
+          ],
+          "key": "rts"
+        },
+        "tactical": {
+          "options": [
+            "Planning squad movements to set up ambushes on enemies.",
+            "Picking the best skills and weapons for a particular mission.",
+            "Small scale squad battles that require precise unit placement."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/9bf/9bfac18ff678f41a4674250fa0e04a52.jpg",
+            "https://media.rawg.io/media/games/fa3/fa3dd043cba3a9cbfe3085e75d92bf7e.jpg",
+            "https://media.rawg.io/media/games/849/849c187c0b5d4cd1ee3283148f7e4cdb.jpg"
+          ],
+          "key": "tactical"
+        },
+        "grand strategy": {
+          "options": [
+            "I like to strategize on a large scale. Give me a nation to control.",
+            "Political as well as military strategy is what ultimately wins conflicts.",
+            "World dominance through politically advantageous marriage."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/77e/77e8a4a7b377a081aabd0dbf688417e1.jpg",
+            "https://media.rawg.io/media/games/eff/eff7b309ae98c32b48f22a10e7523106.jpg",
+            "https://media.rawg.io/media/games/a20/a20d2e07179b4a71dd5276a5c4cc0f61.jpg"
+          ],
+          "key": "grand strategy"
         }
-      },
-      "action": {
-        "option": "Using perfect movement, precise timing and unmatched accuracy to dominate a game.",
-        "image": "https://media.rawg.io/media/games/dbe/dbeeb30e02b59f55c4d8cf4f103a83b9.jpg",
-        "key": "action",
-        "drillDowns": {
-          "question": "An action junkie, are you? Alright, what kind of action do you prefer?",
-          "options": {
-            "platformer": {
-              "option": "I like falling into a bottomless pit right before the end of the level, then missing the first jump six times in a row.",
-              "image": "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg",
-              "key": "platformer"
-            },
-            "shooter": {
-              "option": "I like battling through wave after wave of deadly enemies, chugging Energy Drink TM and clicking heads.",
-              "image": "https://media.rawg.io/media/games/9c5/9c5bc0b6e67102bc96dcf1ba41509e42.jpg",
-              "key": "shooter"
-            },
-            "fighting": {
-              "option": "My favorite thing to do is learn complex button combinations to perform five-second attack animations.",
-              "image": "https://media.rawg.io/media/games/725/725131e129692ec32ed62e9e405f5f4c.jpg",
-              "key": "fighting"
-            },
-            "battleRoyale": {
-              "option": "I wanna be the last person standing in the middle of a deadly circle. No, my escape from that circle isn't explained. Stop asking so many questions.",
-              "image": "https://media.rawg.io/media/games/d97/d97f663b752a6484df105993f17abb49.jpg",
-              "key": "battle royale"
-            }
-          }
+      }
+    },
+    "action": {
+      "options": [
+        "Hitting headshot after headshot to bolster your K/D spread.",
+        "Mastering the hardest combos to outplay an opponent.",
+        "Making precise jumps to beat a level in the shortest amount of time.",
+        "Sneaking around enemies, taking out only those who get in your way.",
+        "Hiding- or running- from things that go bump in the night."
+      ],
+      "images": [
+        "https://media.rawg.io/media/games/566/566f53f43aa1bd28c63cf3a4d21440ee.jpg",
+        "https://media.rawg.io/media/games/7e3/7e327a055bedb9b6d1be86593bef473d.jpg",
+        "https://media.rawg.io/media/games/e04/e04963f3ac4c4fa83a1dc0b9231e50db.jpg",
+        "https://media.rawg.io/media/games/eb5/eb514db62d397c64288160d5bd8fd67a.jpg",
+        "https://media.rawg.io/media/games/b27/b27eea9f8df280799b357b320f01211c.jpg"
+      ],
+      "key": "action",
+      "drillDowns": {
+        "question": "An action junkie, are you? Alright, what kind of action do you prefer?",
+        "platformer": {
+          "options": [
+            "Precise movement and jumps to make it to the end of the level.",
+            "Powerups that give me special abilities like fireballs or super jump.",
+            "Wall jumps, ground pounds and falling into endless pits."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/267/267bd0dbc496f52692487d07d014c061.jpg",
+            "https://media.rawg.io/media/games/23e/23eecccb588a4a9c97f35ebf8f9f00ef.jpg",
+            "https://media.rawg.io/media/screenshots/4f2/4f2246a85225b7a91d63990fe540b7c4.jpg"
+          ],
+          "key": "platformer"
+        },
+        "shooter": {
+          "options": [
+            "Clicking heads and taking names.",
+            "360 no scopes are peak performance.",
+            "Running through a level mowing down enemies with my favorite weapon."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/d97/d97f663b752a6484df105993f17abb49.jpg",
+            "https://media.rawg.io/media/games/38a/38af969459ad6e5de116ec8a4a84218c.jpg",
+            "https://media.rawg.io/media/games/b72/b7233d5d5b1e75e86bb860ccc7aeca85.jpg"
+          ],
+          "key": "shooter"
+        },
+        "fighting": {
+          "options": [
+            "Hitting combos at exactly the right time to counter my opponent's attack.",
+            "BUTTON MASHING",
+            "Brutal finishers and a wealth of characters to play."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/0a2/0a2ee705109a6d8d94e28bef03f6d598.jpg",
+            "https://media.rawg.io/media/games/725/725131e129692ec32ed62e9e405f5f4c.jpg",
+            "https://media.rawg.io/media/games/2c8/2c89e43515ed12aee51becc3dcfd8e7e.jpg"
+          ],
+          "key": "fighting"
+        },
+        "survival horror": {
+          "options": [
+            "Carefully managing resources to escape with your life.",
+            "Running, hiding and surviving a horrific enemy.",
+            "Being scared out of your mind pretty much the entire game."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
+            "https://media.rawg.io/media/screenshots/528/528a09b03530c3b6a1e3ac6c846e20a9.jpg",
+            "https://media.rawg.io/media/games/149/149bbed9d90dc09328ba79bbacfda3c8.jpg"
+          ],
+          "key": "survival horror"
+        },
+        "stealth": {
+          "options": [
+            "The best way to beat an enemy is to sneak around them.",
+            "Staying out of sight so I can line up the perfect shot.",
+            "Avoiding enemy lines of sight to make it to the end of a stage."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/c24/c24ec439abf4a2e92f3429dfa83f7f94.jpg",
+            "https://media.rawg.io/media/games/f6b/f6bed028b02369d4cab548f4f9337e81.jpg",
+            "https://media.rawg.io/media/games/f3d/f3d2f1699b528a2afcd2c97c62859b87.jpg"
+          ],
+          "key": "stealth"
         }
-      },
-      "simulation": {
-        "option": "Meticulously planning every aspect of your world like an all-powerful deity with severe control issues.",
-        "image": "https://media.rawg.io/media/screenshots/21a/21a0dacefc6b20dc81c8aad0625eb9a8.jpg",
-        "key": "simulation",
-        "drillDowns": {
-          "question": "Hmmm, you like simulators, do you? Which simulation appeals most to you?",
-          "options": {
-            "sports": {
-              "option": "I like playing sports, but on a screen in my house. Instead of outside, with real people.",
-              "image": "https://media.rawg.io/media/screenshots/2d0/2d0eeaf3a2b7945183dc98a4bcc29d5f.jpg",
-              "key": "sports"
-            },
-            "management": {
-              "option": "I like managing large scale projects, but I didn't go to school to be a city manager so I just play video games instead.",
-              "image": "https://media.rawg.io/media/games/25c/25c4776ab5723d5d735d8bf617ca12d9.jpg",
-              "key": "management"
-            },
-            "racing": {
-              "option": "I like going the distance. Going for speed. She's all alone (all alone) in her time of need. (I like racing games)",
-              "image": "https://media.rawg.io/media/games/30a/30afe3a3cb06849dc032ef3b9295f180.jpg",
-              "key": "racing"
-            },
-            "flight": {
-              "option": "I wanna fly planes and spaceships. That's it. No special requirements. Just give me a plane or a spaceship, and I'll fly that thing for hours.",
-              "image": "https://media.rawg.io/media/games/89c/89ceadfd42109aa0d80e9c5dbc86f277.jpg",
-              "key": "flight"
-            },
-            "lifeSim": {
-              "option": "Take video games to their furthest extent, and they're just simulations of the real world. What if we're the sims?",
-              "image": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg",
-              "key": "life sim"
-            }
-          }
+      }
+    },
+    "simulation": {
+      "options": [
+        "Managing resources to maximize the growth of your city.",
+        "Taking to the skies with an airplane that flies like the real thing.",
+        "Picking out the best outfit and furniture for your character.",
+        "Scoring a goal at the last second to bring home the win.",
+        "Crossing the finish line right before your opponents."
+      ],
+      "images": [
+        "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg",
+        "https://media.rawg.io/media/games/89c/89ceadfd42109aa0d80e9c5dbc86f277.jpg",
+        "https://media.rawg.io/media/games/08b/08b2eee52a9876a48b955e5149affe5b.jpg",
+        "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg",
+        "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
+      ],
+      "key": "simulation",
+      "drillDowns": {
+        "question": "Hmmm, you like simulators, do you? Which simulation appeals most to you?",
+        "sports": {
+          "options": [
+            "Playing as my favorite team to crush its biggest rival.",
+            "Scoring a PK with 10 seconds left.",
+            "Managing my roster to field the best players available."
+          ],
+          "images": [
+            "https://media.rawg.io/media/screenshots/2d0/2d0eeaf3a2b7945183dc98a4bcc29d5f.jpg",
+            "https://media.rawg.io/media/screenshots/31d/31dc942a8f64163ca99fb77f43c06b87.jpg",
+            "https://media.rawg.io/media/games/0b8/0b8a262e733065e807995becfef6d9cc.jpg"
+          ],
+          "key": "sports"
+        },
+        "management": {
+          "options": [
+            "Managing a business to maximize its growth potential.",
+            "Making sure my population has all the resources it needs to survive.",
+            "Building a really big roller coaster which may or may not kill the people who ride it."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/25c/25c4776ab5723d5d735d8bf617ca12d9.jpg",
+            "https://media.rawg.io/media/games/b64/b645191975dd78c5dfe9e4ea089ff052.jpg",
+            "https://media.rawg.io/media/games/08b/08b2eee52a9876a48b955e5149affe5b.jpg"
+          ],
+          "key": "management"
+        },
+        "racing": {
+          "options": [
+            "Building and customizing awesome supercars to race against challengers.",
+            "Memorizing routes to make it to the finish line first.",
+            "Realistic vehicle handling so it feels like I'm actually driving my favorite cars."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/e98/e989eb7026737bbb7bd386c1d16a5735.jpg",
+            "https://media.rawg.io/media/games/786/7863e587bac630de82fca50d799236a9.jpg",
+            "https://media.rawg.io/media/games/370/3703c683968a54f09630dcf03366ea35.jpg"
+          ],
+          "key": "racing"
+        },
+        "flight": {
+          "options": [
+            "Realistic flight physics, right down to windshear and rainfall.",
+            "Building an awesome spaceship to fly around the cosmos.",
+            "Getting into dogfights in my favorite fighter jet."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/89c/89ceadfd42109aa0d80e9c5dbc86f277.jpg",
+            "https://media.rawg.io/media/screenshots/aa7/aa79f4bd5f66ad92f712aee34cc6c3b1.jpg",
+            "https://media.rawg.io/media/games/c28/c2802dffd26db3d5af8244044fa1e78c.jpg"
+          ],
+          "key": "flight"
+        },
+        "lifeSim": {
+          "options": [
+            "Managing relationships between my character and their friends and love interests.",
+            "Virtual PUPPIES",
+            "Slowing upgrading my town by making money and improving relationships."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg",
+            "https://media.rawg.io/media/games/7a8/7a860b11949573dd523bb23defd6ce02.jpg",
+            "https://media.rawg.io/media/games/cae/caeb9d0cb154124b132d51861735431e.jpg"
+          ],
+          "key": "life sim"
         }
-      },
-      "adventure": {
-        "option": "Getting the rush of discovery from exploring a new area that you had to look at the wiki to figure out how to get to.",
-        "image": "https://media.rawg.io/media/games/0fb/0fbf589c40c4fc3095f8e29d1296d09e.jpg",
-        "key": "adventure",
-        "drillDowns": {
-          "question": "Ahh the adventuring type... Let's see what kind of adventurer you really are.",
-          "options": {
-            "metroidvania": {
-              "option": "I want most of the game to be unreachable until I collect certain items. Also platforming. Lots of platforming.",
-              "image": "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg",
-              "key": "metroidvania"
-            },
-            "survivalHorror": {
-              "option": "That feeling you get when you think something's following you? Take that and condense it into a video game.",
-              "image": "https://media.rawg.io/media/games/cee/cee577e2097a59b77193fe2bce94667d.jpg",
-              "key": "survival horror"
-            },
-            "stealth": {
-              "option": "I habitually avoid conflict because confrontation frightens me. I'd rather sneak around my problems.",
-              "image": "https://media.rawg.io/media/games/b27/b27eea9f8df280799b357b320f01211c.jpg",
-              "key": "stealth"
-            },
-            "survival": {
-              "option": "I prefer extreme realism. If I run out of food, I die. No water? Dead. Too tired? Too bad. Deceased.",
-              "image": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
-              "key": "survival"
-            }
-          }
+      }
+    },
+    "adventure": {
+      "options": [
+        "Managing constantly depleting hunger, thirst and sleep bars to survive until I can escape.",
+        "Fighting bosses to collect items which allow me to access new parts of the map.",
+        "Exploring an area to find a hidden clue.",
+        "Solving puzzles to escape an area.",
+        "Experiencing a narratively-driven world through the lense of a video game."
+      ],
+      "images": [
+        "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg",
+        "https://media.rawg.io/media/games/0fb/0fbf589c40c4fc3095f8e29d1296d09e.jpg",
+        "https://media.rawg.io/media/games/951/951f914b28b246835a811894bbc38403.jpeg",
+        "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg",
+        "https://media.rawg.io/media/games/0be/0bea0a08a4d954337305391b778a7f37.jpg"
+      ],
+      "key": "adventure",
+      "drillDowns": {
+        "question": "Ahh the adventuring type... Let's see what kind of adventure sounds best to you.",
+        "puzzle": {
+          "options": [
+            "Solving increasingly difficult puzzles that require intense though and wiki reading.",
+            "Seriously, sometimes there's no other option but to look at the wiki to solve some puzzles.",
+            "I don't believe anyone who says they've beaten Myst without looking at the wiki."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg",
+            "https://media.rawg.io/media/games/948/948fe7f00b6cba8472f5ecd07a455077.jpg",
+            "https://media.rawg.io/media/screenshots/9d2/9d22689a1c2a7ced9d1690e0c5c66871.jpg"
+          ],
+          "key": "puzzle"
+        },
+        "survival": {
+          "options": [
+            "Running from aggressive wildlife back to your camp to wait out another cold night.",
+            "Searching for food in the wilderness so you can survive another day.",
+            "Crafting the tools necessary to make it to the end of another day."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/7d7/7d7c89793578f721df56022c6cf53bb0.jpg",
+            "https://media.rawg.io/media/games/739/73990e3ec9f43a9e8ecafe207fa4f368.jpg",
+            "https://media.rawg.io/media/games/fd2/fd20a68d7ef195855588c937865dd0a7.jpg"
+          ],
+          "key": "survival"
+        },
+        "metroidvania": {
+          "options": [
+            "Exploration of a highly detailed and interconnected game map.",
+            "Backtracking, backtracking and more backtracking",
+            "Non-linear game progression with a high emphasis on upgrading equipment"
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg",
+            "https://media.rawg.io/media/games/45d/45da4dc311d84b79230317d7b24a3dec.jpg",
+            "https://media.rawg.io/media/games/f8c/f8c6a262ead4c16b47e1219310210eb3.jpg"
+          ],
+          "key": "metroidvania"
+        },
+        "walking simulator": {
+          "options": [
+            "Walking is an adventure, right?",
+            "story-rich adventures that involve a lot of walking.",
+            "It's not all about walking. But there's definitely a lot of walking."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/34e/34e100b1f648de99f32d477065f04653.jpg",
+            "https://media.rawg.io/media/games/0be/0bea0a08a4d954337305391b778a7f37.jpg",
+            "https://media.rawg.io/media/screenshots/8f0/8f0b94922ad5e59968852649697b2643.jpg"
+          ],
+          "key": "walking simulator"
+        },
+        "point & click": {
+          "options": [
+            "Pointing and clicking and pointing and clicking and pointing...",
+            "Solving a puzzle by exploring a static, on-screen environment",
+            "Collecting items and using clues to determine the best time to use those items."
+          ],
+          "images": [
+            "https://media.rawg.io/media/games/951/951f914b28b246835a811894bbc38403.jpeg",
+            "https://media.rawg.io/media/screenshots/e29/e29ab7e5817eb271dd1ca54f31e7d9ec.jpeg",
+            "https://media.rawg.io/media/screenshots/db2/db282210c71afeec653ec200093d7010.jpg"
+          ],
+          "key": "point & click"
         }
       }
     }

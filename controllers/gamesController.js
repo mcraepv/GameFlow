@@ -29,4 +29,9 @@ module.exports = {
     }
     return game;
   },
+
+  getFavorite: async (title) => {
+    const game = await db.Game.findOne({ title: title });
+    return game;
+  },
 };

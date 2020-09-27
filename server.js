@@ -31,7 +31,7 @@ app.get(
   passport.authenticate('steam', { failureRedirect: '/' }),
   function (req, res) {
     res.render('authenticated', {
-      games: req.user,
+      user: req.user,
       clientUrl: process.env.FRONTEND_URL,
     });
   }

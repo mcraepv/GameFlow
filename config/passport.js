@@ -28,7 +28,11 @@ module.exports = (passport) => {
   passport.use(
     new SteamStrategy(stratVars, async function (identifier, profile, done) {
       const userGames = await usersController.create(profile.id);
-      done(null, userGames);
+      const user = {
+        games: userGames,
+        steamID: profile.id,
+      };
+      done(null, user);
     })
   );
 };
