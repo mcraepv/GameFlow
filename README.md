@@ -7,6 +7,8 @@ Users can also look through past quiz results.
 
 http://secret-wildwood-10554.herokuapp.com/
 
+![Home Page](./assets/gameflowpic.png)
+
 ## Table of Contents
 
 - [Installation](#installation)
