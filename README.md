@@ -4,6 +4,7 @@ GameFlow solves the choice paralysis problem many gamers encounter when trying
 to decide what to play next. Users can simply log into their Steam accounts and
 take a short quiz, and GameFlow gives them a suggestion. Users can also save favorite 
 games for future use.
+
 http://secret-wildwood-10554.herokuapp.com/
 
 ## Table of Contents
@@ -11,6 +12,8 @@ http://secret-wildwood-10554.herokuapp.com/
 - [Installation](#installation)
 
 - [Usage](#usage)
+
+- [Technologies](#technologies)
 
 - [License](#license)
 
@@ -24,6 +27,27 @@ out my code!
 ## Usage
 
 Just log in with your Steam account and take the quiz!
+
+## Technologies
+
+React: https://reactjs.org/
+
+Passport: http://www.passportjs.org/
+
+Grommet: https://v2.grommet.io/
+
+Express.js: https://expressjs.com/
+
+MongoDB: https://www.mongodb.com/
+
+Mongoose: https://mongoosejs.com/docs/
+
+Node.js: https://nodejs.org/en/
+
+Steam Web API: https://steamcommunity.com/dev
+
+RAWG API: https://rawg.io/apidocs
+
 
 ## License
 
